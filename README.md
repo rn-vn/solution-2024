@@ -1,6 +1,6 @@
 # Members
 - Rin Takahashi
-- 
+- Kanako Isshiki
 - 
 - 
 - 
