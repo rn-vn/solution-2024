@@ -3,7 +3,7 @@
 - 
 - Kanako Isshiki
 - Hazuki Onozuka
-- 
+- Riko Homma
 
 # Getting Started with Create React App 
 
