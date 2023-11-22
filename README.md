@@ -1,7 +1,7 @@
 # Members
 - Rin Takahashi
 - 
-- 
+- Hazuki Onozuka
 - 
 - 
 
