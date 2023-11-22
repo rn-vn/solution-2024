@@ -2,7 +2,7 @@
 - Rin Takahashi
 - 
 - 
-- 
+- Riko Homma
 - 
 
 # Getting Started with Create React App 
