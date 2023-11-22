@@ -1,8 +1,8 @@
 # Members
 - Rin Takahashi
+- 
 - Kanako Isshiki
-- 
-- 
+- Hazuki Onozuka
 - 
 
 # Getting Started with Create React App 
