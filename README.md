@@ -21,8 +21,7 @@ TODO: windows,mac版両方記載
 
 1. Node install
 
-↓ Download the appropriate version ↓
-https://nodejs.org/en/download
+Download the appropriate version: https://nodejs.org/en/download
 
 2. Confirmation of installation
 ```
@@ -44,5 +43,5 @@ git clone https://github.com/rn-vn/solution-2024.git
 ```
 npm start
 ```
-Then, runs the app in the development mode.
+Then, runs the app in the development mode. <br>
 Open http://localhost:3000 to view it in your browser.
