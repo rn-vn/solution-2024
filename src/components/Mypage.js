@@ -7,6 +7,7 @@ import {
   useNavigate,
   Navigate
 } from "react-router-dom";
+import "./Mypage.css";
 
 const Mypage = () => {
   /* ↓state変数「user」を定義 */
