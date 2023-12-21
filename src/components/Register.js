@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../FirebaseConfig.js";
 /* ↓「Navigate」をimport */
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Register = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -38,7 +38,7 @@ const Register = () => {
 
   return (
     <>
-      {/* ↓ログインしていればマイページを表示 */}
+      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/`} />
       ) : (
