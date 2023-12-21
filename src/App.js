@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Bingo from "./components/Bingo";
 import Mypage from "./components/Mypage";
 import Learning from "./components/Learning";
 
@@ -19,7 +20,8 @@ function App() {
         <Routes>
           <Route path={`/register/`} element={<Register />} />
           <Route path={`/login/`} element={<Login />} />
-          <Route path={`/`} element={<Mypage />} />
+          <Route path={`/`} element={<Bingo />} />
+          <Route path={`/mypage`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
         </Routes>
       </BrowserRouter>
