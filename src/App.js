@@ -5,13 +5,13 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Bingo from "./components/Bingo";
+import HomeBingo from "./components/HomeBingo";
 import Mypage from "./components/Mypage";
 import Learning from "./components/Learning";
 
 // firebase.jsをインポート
-// import { auth, provider } from "./firebase";
-// import {signInWithPopup} from "firebase/auth";
+//import { auth, provider } from "./firebase";
+ //import {signInWithPopup} from "firebase/auth";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path={`/register/`} element={<Register />} />
           <Route path={`/login/`} element={<Login />} />
-          <Route path={`/`} element={<Bingo />} />
+          <Route path={`/`} element={<HomeBingo />} />
           <Route path={`/mypage`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
         </Routes>

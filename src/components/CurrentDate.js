@@ -6,7 +6,7 @@ const CurrentDate = () => {
 
   return (
     <div>
-      <p>{currentDate}</p>
+      <p class="currentdate">{currentDate}</p>
     </div>
   )
 }
