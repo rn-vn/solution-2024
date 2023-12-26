@@ -23,6 +23,7 @@ function App() {
           <Route path={`/`} element={<Bingo />} />
           <Route path={`/mypage`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
+          <Route path={`/goals/`} element={<Goals />} />
         </Routes>
       </BrowserRouter>
     </div>
