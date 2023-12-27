@@ -1,13 +1,14 @@
 import React from 'react'
 import CurrentDate from './CurrentDate'
 import HomeFooter from './HomeFooter'
+import Bingo from './Bingo'
 
 const HomeBingo = () => {
   return (
    
     <div>
      <CurrentDate />
-      <h1>Bingo</h1>
+      <Bingo />
       <HomeFooter />
 
     </div>

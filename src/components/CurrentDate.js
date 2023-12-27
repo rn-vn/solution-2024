@@ -1,4 +1,5 @@
 import React from 'react'
+import './CurrentDate.css';
 
 const CurrentDate = () => {
 
@@ -6,7 +7,9 @@ const CurrentDate = () => {
 
   return (
     <div>
-      <p class="currentdate">{currentDate}</p>
+      <div className='currentdate'>
+      <p class="p-currentdate">{currentDate}</p>
+      </div>
     </div>
   )
 }

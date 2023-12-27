@@ -1,8 +1,42 @@
-
-
-ul li {
-  list-style: none;
-  display: inline-block;
-  margin-top: 30px;
-  margin-left: 20px;
+.footer-container {
+  width: 100%;
+  background-color: #FAF3E0; /* Adjust the color to match your image */
 }
+
+.home-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-item {
+  text-align: center;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000; 
+}
+
+.footer-icon {
+  margin-bottom: 5px;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.p-footer{
+color: #735240;
+ font-size: 12px;
+ font-family: Inter;
+ font-weight: 800;
+ word-wrap: break-word
+}
+
+
