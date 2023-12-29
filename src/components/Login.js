@@ -38,7 +38,7 @@ const Login = () => {
     <>
       {/* ↓ログインできていればホームに遷移 */}
       {user ? (
-        <Navigate to={`/`} />
+        <Navigate to={`/home-bingo/`} />
       ) : (
         <>
           <h1>ログインページ</h1>
