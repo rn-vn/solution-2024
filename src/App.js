@@ -20,11 +20,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={`/register/`} element={<Register />} />
-          <Route path={`/login/`} element={<Login />} />
-          <Route path={`/`} element={<HomeBingo />} />
-          <Route path={`/mypage`} element={<Mypage />} />
+          <Route path={`/`} element={<Login />} />
+          <Route path={`/home-bingo`} element={<HomeBingo />} />
+          <Route path={`/my-page`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
-          <Route path={`/howtoplay/`} element={<Howtoplay />} />
+          <Route path={`/how-to-play/`} element={<Howtoplay />} />
         </Routes>
       </BrowserRouter>
     </div>
