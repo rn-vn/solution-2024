@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
-/* ↓「onAuthStateChanged」をimport */
+import '../normalize.css'
+import './Register.css'
+
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged
 } from "firebase/auth";
 import { auth } from "../FirebaseConfig.js";
-/* ↓「Navigate」をimport */
 import { Navigate } from "react-router-dom";
+
+// パスワード表示切替アイコン
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
 
 const Register = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,10 +65,22 @@ const Register = () => {
               <label>パスワード</label>
               <input
                 name="password"
-                type="password"
                 value={registerPassword}
+                type={passwordType}
                 onChange={(e) => setRegisterPassword(e.target.value)}
               />
+              {passwordType === "password" && (
+                <VisibilityOffIcon
+                  onClick={() => setPasswordType("text")}
+                  className="password-icon"
+                />
+              )}
+              {passwordType === "text" && (
+                <VisibilityIcon
+                  onClick={() => setPasswordType("password")}
+                  className="password-icon"
+                />
+              )}
             </div>
             <button>登録する</button>
           </form>
