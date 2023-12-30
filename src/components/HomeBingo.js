@@ -1,4 +1,5 @@
 import React from 'react'
+import '../normalize.css'
 import CurrentDate from './CurrentDate'
 import HomeFooter from './HomeFooter'
 import Bingo from './Bingo'
