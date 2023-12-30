@@ -19,6 +19,14 @@ const Register = () => {
   const [registerPassword, setRegisterPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
 
+  // 3秒後に非表示に切り替える関数
+  const visibilityChange = (type) => {
+    setPasswordType(type);
+    setTimeout(() => {
+      setPasswordType("password");
+    }, 1000);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -71,13 +79,13 @@ const Register = () => {
               />
               {passwordType === "password" && (
                 <VisibilityOffIcon
-                  onClick={() => setPasswordType("text")}
+                  onClick={() => visibilityChange("text")}
                   className="password-icon"
                 />
               )}
               {passwordType === "text" && (
                 <VisibilityIcon
-                  onClick={() => setPasswordType("password")}
+                  onClick={() => visibilityChange("password")}
                   className="password-icon"
                 />
               )}
