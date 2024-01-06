@@ -5,6 +5,7 @@
 
 .home-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
@@ -12,6 +13,7 @@
 
 .footer-item {
   text-align: center;
+  margin: 10px;
 }
 
 .footer-link {

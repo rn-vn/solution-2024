@@ -12,7 +12,7 @@ const HomeFooter = () => {
       
       
         <div className="footer-item">
-          <a href="/learning">
+          <a href="/learning/">
             <img src={StudySDGs} alt="SDGsを学習する" width={30} height={30}/>
             <p className='p-footer'>SDGsを<br/>学習する</p>
           </a>
@@ -24,13 +24,13 @@ const HomeFooter = () => {
           </a>
         </div>                
         <div className="footer-item">
-          <a href="/howtoplay">
+          <a href="/how-to-play/">
             <img src={HowtoPlay} alt="遊び方を見る" width={30} height={30}/>
             <p className='p-footer'>遊び方を<br/>見る</p>
           </a>
         </div>       
         <div className="footer-item">
-          <a href="/mypage">
+          <a href="/my-page/">
           <img src={AccuntInfo} alt="アカウント情報" width={30} height={30}/>
           <p className='p-footer'>アカウント情報</p>
           </a>

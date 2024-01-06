@@ -8,6 +8,8 @@ import {
   Navigate
 } from "react-router-dom";
 
+import '../normalize.css'
+
 const Mypage = () => {
   /* ↓state変数「user」を定義 */
   const [user, setUser] = useState("");
@@ -27,7 +29,7 @@ const Mypage = () => {
   /* ↓関数「logout」を定義 */
   const logout = async () => {
     await signOut(auth);
-    navigate("/login/");
+    navigate("/");
   }
 
   return (
@@ -36,7 +38,7 @@ const Mypage = () => {
       {!loading && (
         <>
           {!user ? (
-            <Navigate to={`/login/`} />
+            <Navigate to={`/`} />
           ) : (
             <>
               <h1>マイページ</h1>
