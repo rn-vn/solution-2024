@@ -25,13 +25,13 @@ const HomeFooter = () => {
           </a>
         </div>                
         <div className="footer-item">
-          <a href="/how-to-play">
+          <a href="/how-to-play/">
             <img src={HowtoPlay} alt="遊び方を見る" width={30} height={30}/>
             <p className='p-footer'>遊び方を<br/>見る</p>
           </a>
         </div>       
         <div className="footer-item">
-          <a href="/my-page">
+          <a href="/my-page/">
           <img src={AccuntInfo} alt="アカウント情報" width={30} height={30}/>
           <p className='p-footer'>アカウント情報</p>
           </a>
