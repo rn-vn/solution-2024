@@ -1,5 +1,6 @@
 .currentdate{
-  background: #DDF0C6
+  background: #DDF0C6;
+ 
 }
 
 
@@ -10,5 +11,7 @@ font-family: Inter;
  font-weight: 800;
  word-wrap: break-word;
  text-align: center;
+ padding-top: 41px;
+ padding-bottom: 10px;
 }
 
