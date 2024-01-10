@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import '../normalize.css'
+import './Login.css'
+
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged
@@ -6,9 +9,22 @@ import {
 import { auth } from "../FirebaseConfig.js";
 import { Navigate, Link } from "react-router-dom";
 
+// パスワード表示切替アイコン
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
+
+  // 3秒後に非表示に切り替える関数
+  const visibilityChange = (type) => {
+    setPasswordType(type);
+    setTimeout(() => {
+      setPasswordType("password");
+    }, 1000);
+  };
 
   /* ↓関数「handleSubmit」を定義 */
   const handleSubmit = async (e) => {
@@ -59,10 +75,22 @@ const Login = () => {
               {/* ↓「value」と「onChange」を追加 */}
               <input
                 name="password"
-                type="password"
                 value={loginPassword}
+                type={passwordType}
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
+              {passwordType === "password" && (
+                <VisibilityOffIcon
+                  onClick={() => visibilityChange("text")}
+                  className="password-icon"
+                />
+              )}
+              {passwordType === "text" && (
+                <VisibilityIcon
+                  onClick={() => visibilityChange("password")}
+                  className="password-icon"
+                />
+              )}
             </div>
             <button>ログイン</button>
             <p>新規登録は<Link to={`/register/`}>こちら</Link></p>

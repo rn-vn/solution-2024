@@ -13,7 +13,7 @@ const HomeFooter = () => {
       
       
         <div className="footer-item">
-          <a href="/learning">
+          <a href="/learning/">
             <img src={StudySDGs} alt="SDGsを学習する" width={30} height={30}/>
             <p className='p-footer'>SDGsを<br/>学習する</p>
           </a>
