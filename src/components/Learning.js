@@ -88,7 +88,7 @@ const Learning = () => {
     <>
       {/* ↓ログインできていればホームに遷移 */}
       {!user ? (
-        <Navigate to={`/`} />
+        <Navigate to={`/learning`} />
       ) : (
         <>
           <div className='learning-main'>
