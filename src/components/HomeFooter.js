@@ -1,4 +1,5 @@
 import React from 'react'
+import '../normalize.css'
 import './HomeFooter.css';
 import StudySDGs from './images/StudySDGs-icon.svg';
 import BacktoHome from './images/BacktoHome-icon.svg';

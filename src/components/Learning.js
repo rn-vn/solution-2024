@@ -1,77 +1,117 @@
-// 1日毎にリンクを変更する（1日当たり2つ？）
-// リンクへのアクセスかつテキストボックスへの入力条件達成でチェックボックスをオン
-// チェックされたらその状態を保持
-// コピペを許可するかどうか
+// ログイン判定 追加
 
-
-import React, { useState } from 'react';
+import '../normalize.css'
+import './Learning.css'
+import HomeFooter from './HomeFooter'
+import Goals from './images/learning-logo.png'
+import urls from './SettingUrl'
+import { auth } from "../FirebaseConfig.js";
+import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import { onAuthStateChanged } from "firebase/auth";
 
 const Learning = () => {
-  // チェックボックスの状態を管理
-  const [checkboxes, setCheckboxes] = useState([false, false, false]);
 
-  // チェックボックスをオンにする関数
-  const toggleCheckbox = (index) => {
-    setCheckboxes((prevCheckboxes) => {
-      const newCheckboxes = [...prevCheckboxes];
-      newCheckboxes[index] = !newCheckboxes[index];
-      return newCheckboxes;
-    });
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  // 1日ごとにURLをランダムにローテーション
+  useEffect(() => {
+
+    // 日本時間の取得
+    const currentDate = new Date();
+    const japanTime = new Date(
+      currentDate.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' })
+    )
+
+    // 翌日0時 & 初回実行時間の計算
+    const nextDay = new Date(japanTime);
+    nextDay.setDate(japanTime.getDate() + 1);
+    nextDay.setHours(0, 0, 0, 0);
+    const initialDelay = nextDay.getTime() - japanTime.getTime();
+
+    // 初回実行
+    const randomIndex = Math.floor(Math.random() * urls.length);
+    setCurrentUrl(urls[randomIndex]);
+
+    // 1日ごとのランダム実行
+    const intervalId = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * urls.length);
+      setCurrentUrl(urls[randomIndex]);
+    }, 1000 * 60 * 60 * 24);
+
+    setTimeout(() => {
+      clearInterval(intervalId);
+      const newIntervalId = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        setCurrentUrl(urls[randomIndex]);
+      }, 1000 * 60 * 60 * 24);
+      return () => clearInterval(newIntervalId);
+    }, initialDelay);
+  }, []);
+
+  // 新しい画面でリンクを開く
+  const visitRandomLink = () => {
+    window.open(currentUrl, '_blank');
   };
 
-  // テキストボックスの文字数をカウントする関数
+  // テキストボックスの文字数をカウント
   const textCount = () => {
-    const text = document.getElementById('input1').value;
-    const count1 = document.getElementById('count1');
-    count1.innerHTML = text.length;
+    const text = document.getElementById('input').value;
+    const count = document.getElementById('count');
+
+    const spaceCharactor = text.match(/\S/g);
+    if (spaceCharactor !== null) {
+      count.innerHTML = `${spaceCharactor.length}`;
+      count.style.fontSize = '24px';
+      // 100文字以下のスタイル適用
+      if (text.length >= 100) {
+        count.style.color = '#735240';
+        count.style.fontSize = '30px';
+      } else {
+        count.style.color = 'red';
+      }
+    } else {
+      count.innerHTML = '0';
+    }
   }
 
+  /* ↓ログインを判定する設定 */
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  });
+
   return (
-    <div>
-      {/* SDGs 1 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[0]}
-        onChange={() => toggleCheckbox(0)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/1-poverty/" onClick={() => toggleCheckbox(0)}>
-        task 1
-      </a><br />
-      <input
-        type="text"
-        style={{ width: 200, height: 100 }}
-        id="input1"
-        onChange={() => textCount()}
-      /><br />
-      <p id="count1"></p>
+    <>
+      {/* ↓ログインできていればホームに遷移 */}
+      {!user ? (
+        <Navigate to={`/`} />
+      ) : (
+        <>
+          <div className='learning-main'>
+            <div className='learning-wrap'>
+              <img src={Goals} alt='the global goals' />
+              <h2 className='learn-sdgs'>Let's learn about the SDGs!</h2>
+              <div className='task-url'>
+                <input type="button" className='button' value="Click and Learn!" onClick={() => visitRandomLink()} />
+              </div>
 
-
-      {/* SDGs 2 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[1]}
-        onChange={() => toggleCheckbox(1)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/2-hunger/" onClick={() => toggleCheckbox(1)}>
-        task 2<br />
-      </a>
-      <input
-        type="text"
-      /><br />
-
-      {/* SDGs 3 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[2]}
-        onChange={() => toggleCheckbox(2)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/3-health/" onClick={() => toggleCheckbox(2)}>
-        task 3<br />
-      </a>
-      <input
-        type="text"
-      /><br />
-    </div>
+              {/* 回答欄 */}
+              <textarea id="input" onChange={() => textCount()} />
+              <div>
+                <span id="count">0</span>
+                <span className='count-number'><b>/100</b></span>
+              </div>
+              <input type='submit' className='submit' value='Click and Submit!' />
+            </div>
+            <HomeFooter />
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
