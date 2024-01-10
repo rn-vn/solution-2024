@@ -43,7 +43,6 @@ const Login = () => {
 
   /* ↓ログインを判定する設定 */
   const [user, setUser] = useState();
-
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

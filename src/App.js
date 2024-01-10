@@ -24,6 +24,7 @@ function App() {
           <Route path={`/my-page`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
           <Route path={`/how-to-play/`} element={<Howtoplay />} />
+          <Route path={`/login/`} element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

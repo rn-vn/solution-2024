@@ -3,12 +3,27 @@
 // チェックされたらその状態を保持
 // コピペを許可するかどうか
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../FirebaseConfig.js";
+import { Navigate } from "react-router-dom";
 
 const Learning = () => {
   // チェックボックスの状態を管理
   const [checkboxes, setCheckboxes] = useState([false, false, false]);
+  /* ↓state変数「user」を定義 */
+  const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(true);
+  
+  /* ↓ログインしているかどうかを判定する */
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+  }, []);
+  
+  // const navigate = useNavigate();
 
   // チェックボックスをオンにする関数
   const toggleCheckbox = (index) => {
@@ -27,51 +42,61 @@ const Learning = () => {
   }
 
   return (
-    <div>
-      {/* SDGs 1 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[0]}
-        onChange={() => toggleCheckbox(0)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/1-poverty/" onClick={() => toggleCheckbox(0)}>
-        task 1
-      </a><br />
-      <input
-        type="text"
-        style={{ width: 200, height: 100 }}
-        id="input1"
-        onChange={() => textCount()}
-      /><br />
-      <p id="count1"></p>
-
-
-      {/* SDGs 2 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[1]}
-        onChange={() => toggleCheckbox(1)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/2-hunger/" onClick={() => toggleCheckbox(1)}>
-        task 2<br />
-      </a>
-      <input
-        type="text"
-      /><br />
-
-      {/* SDGs 3 */}
-      <input
-        type="checkbox"
-        checked={checkboxes[2]}
-        onChange={() => toggleCheckbox(2)}
-      />
-      <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/3-health/" onClick={() => toggleCheckbox(2)}>
-        task 3<br />
-      </a>
-      <input
-        type="text"
-      /><br />
-    </div>
+    <>
+    {!loading && (
+      <>
+        {!user ? (
+            <Navigate to={`/`} />
+          ) : (
+          <div>
+            {/* SDGs 1 */}
+            <input
+              type="checkbox"
+              checked={checkboxes[0]}
+              onChange={() => toggleCheckbox(0)}
+            />
+            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/1-poverty/" onClick={() => toggleCheckbox(0)}>
+              task 1
+            </a><br />
+            <input
+              type="text"
+              style={{ width: 200, height: 100 }}
+              id="input1"
+              onChange={() => textCount()}
+            /><br />
+            <p id="count1"></p>
+      
+      
+            {/* SDGs 2 */}
+            <input
+              type="checkbox"
+              checked={checkboxes[1]}
+              onChange={() => toggleCheckbox(1)}
+            />
+            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/2-hunger/" onClick={() => toggleCheckbox(1)}>
+              task 2<br />
+            </a>
+            <input
+              type="text"
+            /><br />
+      
+            {/* SDGs 3 */}
+            <input
+              type="checkbox"
+              checked={checkboxes[2]}
+              onChange={() => toggleCheckbox(2)}
+            />
+            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/3-health/" onClick={() => toggleCheckbox(2)}>
+              task 3<br />
+            </a>
+            <input
+              type="text"
+            /><br />
+          </div>
+        )}  
+      </>
+    )}  
+    </>
   );
 };
 
