@@ -1,0 +1,63 @@
+::selection {
+  background-color: #C0C0C0;
+}
+
+.learning-main {
+  background-color: #DDF0C6;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.learning-wrap {
+  background: #FAF3E0;
+  padding-top: 30px;
+  margin: 0px 30px 20px;
+  border: 3px solid #735240;
+}
+
+.learn-sdgs {
+  padding-top: 40px;
+  color: #735240;
+}
+
+.button,
+.submit {
+  color: #735240;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 24px;
+  background-color: #FAF3E0;
+  padding: 12px 12px;
+  text-align: center;
+  border-radius: 100px;
+  border: 3px solid #735240;
+  cursor: pointer;
+}
+
+.button:active,
+.submit:active {
+  -webkit-transform: translate(0, 2px);
+  -moz-transform: translate(0, 2px);
+  transform: translate(0, 3px);
+  box-shadow: none;
+}
+
+#input {
+  width: 80%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  line-height: 1.5;
+  background-color: #FAF3E0;
+  border: 3px solid #735240;
+}
+
+#count {
+  font-size: 24px;
+  color: red;
+}
+
+.count-number {
+  font-size: 30px;
+  color: #735240;
+}
