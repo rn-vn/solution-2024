@@ -75,40 +75,46 @@ const Learning = () => {
     }
   }
 
-  /* ↓ログインを判定する設定 */
+  /* TODO: ↓ログインを判定する設定 */
   const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
-  });
+  }, []);
 
   return (
     <>
       {/* ↓ログインできていればホームに遷移 */}
-      {!user ? (
-        <Navigate to={`/`} />
-      ) : (
+      {!loading && (
         <>
-          <div className='learning-main'>
-            <div className='learning-wrap'>
-              <img src={Goals} alt='the global goals' />
-              <h2 className='learn-sdgs'>Let's learn about the SDGs!</h2>
-              <div className='task-url'>
-                <input type="button" className='button' value="Click and Learn!" onClick={() => visitRandomLink()} />
-              </div>
+          {!user ? (
+            <Navigate to={`/`} />
+          ) : (
+            <>
+              <div className='learning-main'>
+                <div className='learning-wrap'>
+                  <img src={Goals} alt='the global goals' />
+                  <h2 className='learn-sdgs'>Let's learn about the SDGs!</h2>
+                  <div className='task-url'>
+                    <input type="button" className='button' value="Click and Learn!" onClick={() => visitRandomLink()} />
+                  </div>
 
-              {/* 回答欄 */}
-              <textarea id="input" onChange={() => textCount()} />
-              <div>
-                <span id="count">0</span>
-                <span className='count-number'><b>/100</b></span>
+                  {/* 回答欄 */}
+                  <textarea id="input" onChange={() => textCount()} />
+                  <div>
+                    <span id="count">0</span>
+                    <span className='count-number'><b>/100</b></span>
+                  </div>
+                  <input type='submit' className='submit' value='Click and Submit!' />
+                </div>
+                <HomeFooter />
               </div>
-              <input type='submit' className='submit' value='Click and Submit!' />
-            </div>
-            <HomeFooter />
-          </div>
+            </>
+          )}
         </>
       )}
     </>
