@@ -6,6 +6,7 @@ import BacktoHome from './images/BacktoHome-icon.svg';
 import HowtoPlay from './images/HowtoPlay-icon.svg';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
 
+
 const HomeFooter = () => {
   return (
     <div className="footer-container">

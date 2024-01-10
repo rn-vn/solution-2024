@@ -1,4 +1,7 @@
 .main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #DDF0C6
   
 }
@@ -9,4 +12,58 @@
   border-radius: 20px; 
   border: 3px #735240 solid
 
+}
+
+.bingotitle-container{
+text-align: center;
+}
+
+.bingotitle{
+  object-fit: cover;
+}
+
+.bingo-firststage,
+.bingo-secondstage,
+.bingo-thirdstage {
+  display: flex;
+  
+}
+.bingo-thirdstage {
+  margin-bottom: 25px;
+}
+.bingo1{
+  margin-left: 22px;
+  margin-right: 29px;
+}
+.bingo2{
+  margin-right: 29px;
+}
+.bingo3{
+  margin-right: 22px;
+}
+.bingo4{
+  margin-left: 22px;
+  margin-right: 29px;
+  margin-top: 44px;
+}
+.bingostar{
+  margin-right: 29px;
+  margin-top: 44px;
+}
+.bingo6{
+  margin-right: 22px;
+  margin-top: 44px;
+}
+.bingo7{
+  margin-left: 22px;
+  margin-right: 29px;
+  margin-top: 44px;
+}
+.bingo8{
+  margin-right: 29px;
+  margin-top: 44px;
+}
+.bingo9{
+  margin-right: 22px;
+  margin-top: 44px;
 }
