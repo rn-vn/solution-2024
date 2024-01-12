@@ -8,6 +8,7 @@ import HomeBingo from "./components/HomeBingo";
 import Mypage from "./components/Mypage";
 import Learning from "./components/Learning";
 import Howtoplay from './components/Howtoplay';
+import Goals from './components/Goals';
 
 // firebase.jsをインポート
 //import { auth, provider } from "./firebase";
@@ -24,6 +25,9 @@ function App() {
           <Route path={`/my-page`} element={<Mypage />} />
           <Route path={`/learning/`} element={<Learning />} />
           <Route path={`/how-to-play/`} element={<Howtoplay />} />
+          
+          <Route path={`/goals/`} element={<Goals />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
