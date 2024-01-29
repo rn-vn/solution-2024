@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 
 import '../normalize.css'
+import './Mypage.css';
+import HomeFooter from './HomeFooter';
 
 const Mypage = () => {
   /* ↓state変数「user」を定義 */
@@ -41,9 +43,14 @@ const Mypage = () => {
             <Navigate to={`/`} />
           ) : (
             <>
+            <div className="mypage-container">
+              <div className="accountinformation-container">
               <h1>マイページ</h1>
               <p>{user?.email}</p>
               <button onClick={logout}>ログアウト</button>
+              </div>
+              </div>
+              <HomeFooter />
             </>
           )}
         </>
