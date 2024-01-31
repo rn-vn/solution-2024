@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
 
-  height: 740px;
+  height: 90vh;
   background: #DDF0C6;
 }
 .accountinformation-container{
@@ -12,12 +12,36 @@
   height: 300px;
   top: 131px;
   background-color: #FAF3E0; 
-  border: 3px #735240 solid
+  border: 3px #735240 solid;
 }
+
+.Mypage-email{
+  color: #735240;
+  font-size: 20px;
+  font-family: Inter;
+  font-weight: 800;
+  word-wrap: break-word
+}
+
 h1{
   color: #735240; 
   font-size: 12px; 
   font-family: Inter; 
   font-weight: 800; 
+  word-wrap: break-word;
+}
+.mypage-bottom{
+  padding: 10px; 
+  border-radius: 25px; 
+  border: 1px #735240 solid; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  display: inline-flex;
+/*ログアウトのフォント*/
+  color: #735240;
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 800;
   word-wrap: break-word;
 }
