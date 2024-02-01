@@ -1,8 +1,12 @@
 import React from 'react'
+import HomeFooter from './HomeFooter'
 
 const Howtoplay = () => {
   return (
-    <div>Howtoplay</div>
+    <>
+      <p>Howtoplay</p>
+      <HomeFooter />
+    </>
   )
 }
 

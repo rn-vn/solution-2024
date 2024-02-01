@@ -12,8 +12,8 @@ const HomeBingo = () => {
       <div className="home-bingo-container">
      <CurrentDate />
       <Bingo />
-      <HomeFooter />
       </div>
+      <HomeFooter />
 
     </div>
   )

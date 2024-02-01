@@ -1,5 +1,6 @@
 .footer-container {
-  top: 740px;
+  bottom: 0;
+  margin-top: 0%;
   position: fixed;
   width: 100%;
   background-color: #FAF3E0; /* Adjust the color to match your image */

@@ -11,6 +11,9 @@ import {
 import '../normalize.css'
 import './Mypage.css';
 import HomeFooter from './HomeFooter';
+import AccuntInfo from './images/Accuntinfo-icon.svg';
+import DeteteIcon from './images/delete-icon.svg';
+
 
 const Mypage = () => {
   /* ↓state変数「user」を定義 */
@@ -45,9 +48,15 @@ const Mypage = () => {
             <>
             <div className="mypage-container">
               <div className="accountinformation-container">
-              <h1>マイページ</h1>
-              <p>{user?.email}</p>
-              <button onClick={logout}>ログアウト</button>
+              <img src={DeteteIcon} alt="アカウント情報" width={30} height={30}/>
+              <div className="footer-item">
+              <img src={AccuntInfo} alt="アカウント情報" width={30} height={30}/>
+              <p className='p-footer'>アカウント情報</p>
+              </div>
+
+              <p className="Mypage-email">{user?.email}</p>
+
+              <button  className="mypage-bottom" onClick={logout}>ログアウト</button>
               </div>
               </div>
               <HomeFooter />
