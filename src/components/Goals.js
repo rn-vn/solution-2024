@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../FirebaseConfig";
 
 // データを追加するコレクションを指定

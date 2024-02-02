@@ -1,25 +1,23 @@
-.main{
-  height: 80vh;
+.bingo-main {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  margin-top: 1vh;
 }
-.bingo-container{
-  margin-top: 16px;
-  width: 362px; 
-  height: 456px; 
-  background: #FAF1E4; 
-  border-radius: 20px; 
+
+.bingo-container {
+  width: 362px;
+  height: 456px;
+  background: #FAF1E4;
+  border-radius: 20px;
   border: 3px #735240 solid;
-
 }
 
-.bingotitle-container{
-text-align: center;
+.bingotitle-container {
+  text-align: center;
 }
 
-.bingotitle{
+.bingotitle {
   object-fit: cover;
 }
 
@@ -27,44 +25,30 @@ text-align: center;
 .bingo-secondstage,
 .bingo-thirdstage {
   display: flex;
-  
 }
+
 .bingo-thirdstage {
   margin-bottom: 25px;
 }
-.bingo1{
+
+.bingo1,
+.bingo4,
+.bingo7 {
   margin-left: 22px;
   margin-right: 29px;
+  margin-bottom: 44px;
 }
-.bingo2{
-  margin-right: 29px;
-}
-.bingo3{
-  margin-right: 22px;
-}
-.bingo4{
-  margin-left: 22px;
-  margin-right: 29px;
-  margin-top: 44px;
-}
-.bingostar{
-  margin-right: 29px;
-  margin-top: 44px;
-}
-.bingo6{
-  margin-right: 22px;
-  margin-top: 44px;
-}
-.bingo7{
-  margin-left: 22px;
-  margin-right: 29px;
-  margin-top: 44px;
-}
+
+.bingo2,
+.bingo5,
 .bingo8{
   margin-right: 29px;
-  margin-top: 44px;
+  margin-bottom: 44px;
 }
-.bingo9{
+
+.bingo3,
+.bingo6,
+.bingo9 {
   margin-right: 22px;
-  margin-top: 44px;
+  margin-bottom: 44px;
 }

@@ -46,18 +46,18 @@ const Mypage = () => {
             <Navigate to={`/`} />
           ) : (
             <>
-            <div className="mypage-container">
-              <div className="accountinformation-container">
-              <img src={DeteteIcon} alt="アカウント情報" width={30} height={30}/>
-              <div className="footer-item">
-              <img src={AccuntInfo} alt="アカウント情報" width={30} height={30}/>
-              <p className='p-footer'>アカウント情報</p>
-              </div>
+              <div className="mypage-container">
+                <div className="accountinformation-container">
+                  <img src={DeteteIcon} alt="アカウント情報" width={30} height={30} />
+                  <div className="footer-item">
+                    <img src={AccuntInfo} alt="アカウント情報" width={30} height={30} />
+                    <p className='p-footer'>アカウント情報</p>
+                  </div>
 
-              <p className="Mypage-email">{user?.email}</p>
+                  <p className="Mypage-email">{user?.email}</p>
 
-              <button  className="mypage-bottom" onClick={logout}>ログアウト</button>
-              </div>
+                  <button className="mypage-bottom" onClick={logout}>ログアウト</button>
+                </div>
               </div>
               <HomeFooter />
             </>
