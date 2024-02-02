@@ -1,17 +1,31 @@
 // ログイン判定 追加
 
+/**
+ * TODO
+ * Submitボタンクリック時の動作
+ * 字数制約を設ける
+ */
+
 import '../normalize.css'
 import './Learning.css'
+import React from 'react'
 import HomeFooter from './HomeFooter'
 import Goals from './images/learning-logo.png'
-import urls from './SettingUrl'
+import Urls from './SettingUrl'
 import { auth } from "../FirebaseConfig.js";
 import { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 
 const Learning = () => {
 
+  /**
+   * 1日毎にURLをランダムにローテーションする関数
+   * @param {string} currentUrl - 今日のURL
+   * @param {string} setCurrentUrl - 今日のURLを更新する関数
+   * @param {string} currentDate - 今日の日付
+   * @param {string} initialDelay - 初回実行時間
+   */
   const [currentUrl, setCurrentUrl] = useState('');
 
   // 1日ごとにURLをランダムにローテーション
@@ -30,20 +44,20 @@ const Learning = () => {
     const initialDelay = nextDay.getTime() - japanTime.getTime();
 
     // 初回実行
-    const randomIndex = Math.floor(Math.random() * urls.length);
-    setCurrentUrl(urls[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * Urls.length);
+    setCurrentUrl(Urls[randomIndex]);
 
     // 1日ごとのランダム実行
     const intervalId = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * urls.length);
-      setCurrentUrl(urls[randomIndex]);
+      const randomIndex = Math.floor(Math.random() * Urls.length);
+      setCurrentUrl(Urls[randomIndex]);
     }, 1000 * 60 * 60 * 24);
 
     setTimeout(() => {
       clearInterval(intervalId);
       const newIntervalId = setInterval(() => {
-        const randomIndex = Math.floor(Math.random() * urls.length);
-        setCurrentUrl(urls[randomIndex]);
+        const randomIndex = Math.floor(Math.random() * Urls.length);
+        setCurrentUrl(Urls[randomIndex]);
       }, 1000 * 60 * 60 * 24);
       return () => clearInterval(newIntervalId);
     }, initialDelay);
@@ -75,7 +89,11 @@ const Learning = () => {
     }
   }
 
-  /* TODO: ↓ログインを判定する設定 */
+  /**
+   * ログイン判定
+   * @param {string} user - ユーザー情報
+   * @param {string} setUser - ユーザー情報を更新
+   */
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -85,6 +103,32 @@ const Learning = () => {
       setLoading(false);
     });
   }, []);
+
+  /**
+   * 提出後の挙動
+   * @param {string} navigate - ページ遷移
+   */
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const submitCheck = document.getElementById('submit');
+    const bingoStar = document.getElementById('bingo5');
+
+    if (submitCheck) {
+      const submitClick = () => {
+      console.log(bingoStar);
+      bingoStar.setAttribute('src', 'Star');
+      navigate('/home-bingo');
+      }
+
+      submitCheck.addEventListener('click', submitClick);
+
+      // useEffectから抜ける際にイベントリスナーを削除（クリーンアップ）
+      return () => {
+        submitCheck.removeEventListener('click', submitClick);
+      };
+    }
+  }, [navigate]);
 
   return (
     <>
@@ -109,9 +153,9 @@ const Learning = () => {
                     <span id="count">0</span>
                     <span className='count-number'><b>/100</b></span>
                   </div>
-                  <input type='submit' className='submit' value='Click and Submit!' />
-                  <HomeFooter />
+                  <input type='submit' id='submit' className='submit' value='Click and Submit!' />
                 </div>
+                <HomeFooter />
               </div>
             </>
           )}
