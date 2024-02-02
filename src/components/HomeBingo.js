@@ -7,11 +7,11 @@ import './HomeBingo.css';
 
 const HomeBingo = () => {
   return (
-   
+
     <div>
       <div className="home-bingo-container">
-     <CurrentDate />
-      <Bingo />
+        <CurrentDate />
+        <Bingo />
       </div>
       <HomeFooter />
 
