@@ -12,7 +12,6 @@ import '../normalize.css'
 import './Mypage.css';
 import HomeFooter from './HomeFooter';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
-import DeteteIcon from './images/delete-icon.svg';
 
 
 const Mypage = () => {
