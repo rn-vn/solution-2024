@@ -1,4 +1,8 @@
 .home-main{
-  height: 90vh;
+  height: 100vh;
   background: #DDF0C6;
+}
+.home-wrap{
+  height: 56vh;
+ 
 }
