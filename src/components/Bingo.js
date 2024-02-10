@@ -15,30 +15,25 @@ import Bingo9 from './images/bingo9.svg';
 const Bingo = () => {
   return (
     <div className='bingo-main'>
-
       <div className='bingo-container'>
         <div className='bingotitle-container'>
           <img className='bingotitle' src={BingoTitle} alt="bingotitle" width={160} height={69} />
         </div>
-        <div className='bingo-firststage'>
-          <img className='bingo1' src={Bingo1} alt="bingo1" width={87} height={87} />
-          <img className='bingo2' src={Bingo2} alt="bingo2" width={87} height={87} />
-          <img className='bingo3' src={Bingo3} alt="bingo3" width={87} height={87} />
-        </div>
-        <div className='bingo-secondstage'>
-          <img className='bingo4' src={Bingo4} alt="bingo4" width={87} height={87} />
-          <img className='bingo5' id='bingo5' src={Bingo5} alt="bingo5" width={87} height={87} />
-          <img className='bingo6' src={Bingo6} alt="bingo6" width={87} height={87} />
-        </div>
-        <div className='bingo-thirdstage'>
-          <img className='bingo7' src={Bingo7} alt="bingo7" width={87} height={87} />
-          <img className='bingo8' src={Bingo8} alt="bingo8" width={87} height={87} />
-          <img className='bingo9' src={Bingo9} alt="bingo9" width={87} height={87} />
+        {/* ステージ分割のdivを削除し、画像のみを並べます */}
+        <div className='bingo-grid'>
+          <img className='bingo-cell' src={Bingo1} alt="Bingo 1" />
+          <img className='bingo-cell' src={Bingo2} alt="Bingo 2" />
+          <img className='bingo-cell' src={Bingo3} alt="Bingo 3" />
+          <img className='bingo-cell' src={Bingo4} alt="Bingo 4" />
+          <img className='bingo-cell' src={Bingo5} alt="Bingo 5" />
+          <img className='bingo-cell' src={Bingo6} alt="Bingo 6" />
+          <img className='bingo-cell' src={Bingo7} alt="Bingo 7" />
+          <img className='bingo-cell' src={Bingo8} alt="Bingo 8" />
+          <img className='bingo-cell' src={Bingo9} alt="Bingo 9" />
         </div>
       </div>
-
     </div>
   )
 }
 
-export default Bingo
+export default Bingo;
