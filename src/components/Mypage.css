@@ -1,16 +1,14 @@
 .mypage-container {
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
-  height: 90vh;
-  background: #DDF0C6;
 }
 
 .account-information-container {
   width: 90vw;
-  height: 40vh;
+  height: 50vh;
   padding: 20px;
   background-color: #FAF3E0;
   border: 3px #735240 solid;

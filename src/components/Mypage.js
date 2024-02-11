@@ -10,6 +10,7 @@ import {
 
 import '../normalize.css'
 import './Mypage.css';
+import CurrentDate from './CurrentDate'
 import HomeFooter from './HomeFooter';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
 
@@ -46,6 +47,7 @@ const Mypage = () => {
           ) : (
             <>
               <div className="mypage-container">
+                <CurrentDate />
                 <div className="account-information-container">
                   <div className="footer-item">
                     <img src={AccuntInfo} alt="Account" width={30} height={30} />
