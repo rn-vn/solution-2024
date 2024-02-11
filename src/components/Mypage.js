@@ -12,7 +12,6 @@ import '../normalize.css'
 import './Mypage.css';
 import HomeFooter from './HomeFooter';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
-import DeteteIcon from './images/delete-icon.svg';
 
 
 const Mypage = () => {
@@ -48,7 +47,6 @@ const Mypage = () => {
             <>
               <div className="mypage-container">
                 <div className="accountinformation-container">
-                  <img src={DeteteIcon} alt="アカウント情報" width={30} height={30} />
                   <div className="footer-item">
                     <img src={AccuntInfo} alt="アカウント情報" width={30} height={30} />
                     <p className='p-footer'>アカウント情報</p>
