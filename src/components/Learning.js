@@ -9,16 +9,15 @@
 import '../normalize.css'
 import './Learning.css'
 import React from 'react'
-import HomeFooter from './HomeFooter'
+import HomeFooter from './HomeFooter.js'
 import Goals from './images/learning-logo.png'
-import Urls from './SettingUrl'
+import Urls from './SettingUrl.js'
 import { auth } from "../FirebaseConfig.js";
 import { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 
 const Learning = () => {
-
   /**
    * 1日毎にURLをランダムにローテーションする関数
    * @param {string} currentUrl - 今日のURL
@@ -69,7 +68,7 @@ const Learning = () => {
   };
 
   // テキストボックスの文字数をカウント
-  const textCount = () => {
+  const textCountStyle = () => {
     const text = document.getElementById('input').value;
     const count = document.getElementById('count');
 
@@ -86,6 +85,20 @@ const Learning = () => {
       }
     } else {
       count.innerHTML = '0';
+    }
+  }
+
+  const navigate = useNavigate();
+
+  const textCountCheck = () => {
+    const count = document.getElementById('count');
+
+    if (count.length <= 100) {
+      alert('Please enter more than 100 characters!');
+    }
+    else {
+      alert('You got a star!');
+      navigate('/home-bingo');
     }
   }
 
@@ -108,27 +121,11 @@ const Learning = () => {
    * 提出後の挙動
    * @param {string} navigate - ページ遷移
    */
-  const navigate = useNavigate();
 
-  useEffect(() => {
+  const AddStar = () => {
     const submitCheck = document.getElementById('submit');
-    const bingoStar = document.getElementById('bingo5');
-
-    if (submitCheck) {
-      const submitClick = () => {
-      console.log(bingoStar);
-      bingoStar.setAttribute('src', 'Star');
-      navigate('/home-bingo');
-      }
-
-      submitCheck.addEventListener('click', submitClick);
-
-      // useEffectから抜ける際にイベントリスナーを削除（クリーンアップ）
-      return () => {
-        submitCheck.removeEventListener('click', submitClick);
-      };
-    }
-  }, [navigate]);
+    submitCheck.addEventListener('click', textCountCheck);
+  }
 
   return (
     <>
@@ -148,12 +145,12 @@ const Learning = () => {
                   </div>
 
                   {/* 回答欄 */}
-                  <textarea id="input" onChange={() => textCount()} />
+                  <textarea id="input" onChange={() => textCountStyle()} />
                   <div>
                     <span id="count">0</span>
                     <span className='count-number'><b>/100</b></span>
                   </div>
-                  <input type='submit' id='submit' className='submit' value='Click and Submit!' />
+                  <input type='submit' id='submit' className='submit' onClick={AddStar} value='Click and Submit!' />
                 </div>
                 <HomeFooter />
               </div>
