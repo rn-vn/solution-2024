@@ -29,7 +29,6 @@
 .p-footer {
   color: #735240;
   font-size: 16px;
-  font-weight: 800;
   word-wrap: break-word;
 }
 
@@ -43,7 +42,7 @@
   display: inline-flex;
   color: #735240;
   background-color: #FAF3E0;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .mypage-bottom:hover {
