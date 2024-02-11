@@ -38,9 +38,11 @@ const Bingo = () => {
           <div className="bingo-cell" id="bingo4">
             <img className="bingo-cell" src={Bingo4} alt="Bingo 4" />
           </div>
+          <a className="bingo-cell" href="/learning/">
           <div className="bingo-cell" id="bingo5">
             <img className="bingo-cell" src={Bingo5} alt="Bingo 5" />
           </div>
+          </a>
           <div className="bingo-cell" id="bingo6">
             <img className="bingo-cell" src={Bingo6} alt="Bingo 6" />
           </div>
