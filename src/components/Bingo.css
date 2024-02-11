@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 362px;
+  height: 456px;
   background: #FAF1E4; /* This should match the main background */
   border-radius: 20px;
   border: 3px solid #735240;
