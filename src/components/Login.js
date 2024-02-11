@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../normalize.css'
-import './Login.css'
+import './LoginRegister.css'
 
 import {
   signInWithEmailAndPassword,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../normalize.css'
-import './Register.css'
+import './LoginRegister.css'
 import { CreateDB } from "./CreateDB.js";
 
 import {
