@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import '../normalize.css'
 import './Login.css'
 
@@ -13,7 +13,6 @@ import { Navigate, Link } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-const LoginContext = createContext();
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");

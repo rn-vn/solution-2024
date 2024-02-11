@@ -8,7 +8,7 @@ const CurrentDate = () => {
   return (
     <div>
       <div className='currentdate'>
-      <p class="p-currentdate">{currentDate}</p>
+      <p className="p-currentdate">{currentDate}</p>
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../normalize.css'
 import './Register.css'
+import { CreateDB } from "./CreateDB.js";
 
 import {
   createUserWithEmailAndPassword,
@@ -36,6 +37,7 @@ const Register = () => {
         registerEmail,
         registerPassword
       );
+      CreateDB();
     } catch (error) {
       alert("正しく入力してください");
       // TODO: 正しいエラーメッセージを記述する
