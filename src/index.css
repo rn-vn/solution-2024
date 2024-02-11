@@ -6,11 +6,22 @@
   padding: 0;
 }
 
+/* 下に行くほど太くなります */
 @font-face {
-  font-family: "yomogi";
-  src: url("./components/fonts/TsukimiRounded-Light.ttf");
+  font-family: "yomogi-regular";
+  src: url("./components/fonts/TsukimiRounded-Regular.ttf");
+}
+
+@font-face {
+  font-family: "yomogi-medium";
+  src: url("./components/fonts/TsukimiRounded-Medium.ttf");
+}
+
+@font-face {
+  font-family: "yomogi-semibold";
+  src: url("./components/fonts/TsukimiRounded-SemiBold.ttf");
 }
 
 :root {
-  font-family: "yomogi";
+  font-family: "yomogi-medium";
 }
