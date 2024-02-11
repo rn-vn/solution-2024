@@ -5,7 +5,7 @@ import bingo1 from './images/bingo1.svg';
 import bingo2 from './images/bingo2.svg';
 import bingo3 from './images/bingo3.svg';
 import bingo4 from './images/bingo4.svg';
-import Star from './images/Star 1.svg';
+import Star from './images/Star1.svg';
 import bingo6 from './images/bingo6.svg';
 import bingo7 from './images/bingo7.svg';
 import bingo8 from './images/bingo8.svg';
