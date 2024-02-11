@@ -2,13 +2,11 @@
   height: 10vh;
 } */
 
-.p-currentdate{
-color: #735240;
-font-size: 24px;
-font-family: Inter;
- font-weight: 800;
- word-wrap: break-word;
- text-align: center;
- padding-top: 3vh;
+.p-currentdate {
+  color: #735240;
+  font-size: 24px;
+  font-weight: 800;
+  word-wrap: break-word;
+  text-align: center;
+  padding-top: 3vh;
 }
-

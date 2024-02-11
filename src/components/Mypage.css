@@ -1,47 +1,50 @@
 .mypage-container {
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
   justify-content: center;
-  align-items: center;
-
-  height: 90vh;
-  background: #DDF0C6;
 }
-.accountinformation-container{
-  width: 300px;
-  height: 300px;
-  top: 131px;
-  background-color: #FAF3E0; 
+
+.account-information-container {
+  width: 90vw;
+  height: 50vh;
+  padding: 20px;
+  background-color: #FAF3E0;
   border: 3px #735240 solid;
+  border-radius: 20px;
 }
 
-.Mypage-email{
+.Mypage-email {
   color: #735240;
   font-size: 20px;
-  font-family: Inter;
   font-weight: 800;
-  word-wrap: break-word
+  word-wrap: break-word;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-h1{
-  color: #735240; 
-  font-size: 12px; 
-  font-family: Inter; 
-  font-weight: 800; 
+.p-footer {
+  color: #735240;
+  font-size: 16px;
   word-wrap: break-word;
 }
-.mypage-bottom{
-  padding: 10px; 
-  border-radius: 25px; 
-  border: 1px #735240 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+
+.mypage-bottom {
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px #735240 solid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px 15px;
   display: inline-flex;
-/*ログアウトのフォント*/
   color: #735240;
-  font-size: 12px;
-  font-family: Inter;
-  font-weight: 800;
-  word-wrap: break-word;
+  background-color: #FAF3E0;
+  font-size: 16px;
+}
+
+.mypage-bottom:hover {
+  background-color: #735240;
+  color: #FAF3E0;
+  cursor: pointer;
 }
