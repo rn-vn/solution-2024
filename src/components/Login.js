@@ -58,44 +58,45 @@ const Login = () => {
         <Navigate to={`/home-bingo/`} />
       ) : (
         <>
-          <h1>ログインページ</h1>
-          {/* onSubmitを追加↓ */}
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>メールアドレス</label>
-              {/* ↓「value」と「onChange」を追加 */}
-              <input
-                name="email"
-                type="email"
-                value={loginEmail}
-                onChange={(e) => setLoginEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>パスワード</label>
-              {/* ↓「value」と「onChange」を追加 */}
-              <input
-                name="password"
-                value={loginPassword}
-                type={passwordType}
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-              {passwordType === "password" && (
-                <VisibilityOffIcon
-                  onClick={() => visibilityChange("text")}
-                  className="password-icon"
+          <h1 className="account-title">Login</h1>
+          <div className="input-main">
+            <form className="account-form" onSubmit={handleSubmit}>
+              <div>
+                <label className="input-mail">Mail Address</label>
+                <input
+                  className="input-form"
+                  name="email"
+                  type="email"
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
                 />
-              )}
-              {passwordType === "text" && (
-                <VisibilityIcon
-                  onClick={() => visibilityChange("password")}
-                  className="password-icon"
+              </div>
+              <div>
+                <label className="input-pass">Password</label>
+                <input
+                  className="input-form"
+                  name="password"
+                  value={loginPassword}
+                  type={passwordType}
+                  onChange={(e) => setLoginPassword(e.target.value)}
                 />
-              )}
-            </div>
-            <button>ログイン</button>
-            <p>新規登録は<Link to={`/register/`}>こちら</Link></p>
-          </form>
+                {passwordType === "password" && (
+                  <VisibilityOffIcon
+                    onClick={() => visibilityChange("text")}
+                    className="password-icon"
+                  />
+                )}
+                {passwordType === "text" && (
+                  <VisibilityIcon
+                    onClick={() => visibilityChange("password")}
+                    className="password-icon"
+                  />
+                )}
+              </div>
+              <button className="create-button">Login</button>
+              <p><Link className="go-register" to={`/register/`}>Click here to register</Link></p>
+            </form>
+          </div>
         </>
       )}
     </>
