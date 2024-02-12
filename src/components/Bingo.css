@@ -56,3 +56,6 @@
   background: #FAF1E4; /* Adjust cell background as needed */
  
 }
+.shufflebutton{
+  display: flex;
+}

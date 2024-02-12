@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { auth, db } from '../FirebaseConfig';
-import { collection, doc, setDoc } from '@firebase/firestore';
+import { collection, doc, setDoc, getDoc } from '@firebase/firestore';
 
 const TaskList = [
   {id: 1, name: "Bring your own bottle", path: "SDGs14logo.svg"}, 
@@ -72,47 +72,43 @@ const CreateDB = async () => {
 
       // ビンゴ情報のドキュメント作成
       const bingoDocRef = doc(collection(db, 'BingoInfo'), userId );
-      await setDoc(bingoDocRef, {
-        masu1:{
-          Task: task1,
-          Status: 0
-        },
-        masu2:{
-          Task: task2,
-          Status: 0
-        },
-        masu3:{
-          Task: task3,
-          Status: 0
-        },
-        masu4:{
-          Task: task4,
-          Status: 0
-        },
-        masu5:{
-          Task: task5,
-          Status: 0
-        },
-        masu6:{
-          Task: task6,
-          Status: 0
-        },
-        masu7:{
-          Task: task7,
-          Status: 0
-        },
-        masu8:{
-          Task: task8,
-          Status: 0
-        },
-        masu9:{
-          Task: task9,
-          Status: 0
-        },
-      })
+      const tasks = {
+        task: [ task1, task2, task3, task4, task5, task6, task7, task8, task9 ],
+        status: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      };
+      await setDoc(bingoDocRef, tasks)
       console.log(bingoDocRef);
-      return selectedTasks;
+      return tasks;
 };
 
+const GetDB = async () => {
+  // ユーザーID取得
+  const userId = auth.currentUser.uid;
+  console.log(userId);
 
-export {TaskList, CreateDB};
+  // ビンゴ情報のドキュメント取得
+  const bingoDocRef = doc(collection(db, 'BingoInfo'), userId );
+  const docSnap = await getDoc(bingoDocRef);
+  if (docSnap.exists()) {
+    const tasks = docSnap.data();
+    console.log(tasks)
+    return tasks;
+  } else {
+    console.log("No data")
+    return null;
+  }
+}
+
+const WriteDB = async (tasks) => {
+  // ユーザーID取得
+  const userId = auth.currentUser.uid;
+  console.log(userId);
+
+  // ビンゴ情報のドキュメント作成
+  const bingoDocRef = doc(collection(db, 'BingoInfo'), userId );
+  await setDoc(bingoDocRef, tasks)
+  console.log(bingoDocRef);
+  return tasks;
+};
+
+export {TaskList, CreateDB, GetDB, WriteDB};
