@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { auth, db } from '../FirebaseConfig';
 import { collection, doc, setDoc } from '@firebase/firestore';
 import { Task } from '@mui/icons-material';
@@ -18,9 +19,9 @@ const TaskList = [
   {id: 13, name: "Purchase products with ASC certification", path: "./images/SDGs14logo.svg"},
   {id: 14, name: "Buy organic vegetables", path: "./images/SDGs12logo.svg"},
   {id: 15, name: "Buy fair trade products", path: "./images/SDGs12logo.svg"},
-  {id: 15, name: "Look at a disaster map", path: "./images/SDGs12logo.svg"},
-  {id: 15, name: "Purchase products from companies that are engaging with the SDGs", path: "./images/SDGs12logo.svg"},
-  {id: 15, name: "Look for (and buy) food produced in your local area", path: "./images/SDGs12logo.svg"},
+  {id: 16, name: "Look at a disaster map", path: "./images/SDGs12logo.svg"},
+  {id: 17, name: "Purchase products from companies that are engaging with the SDGs", path: "./images/SDGs12logo.svg"},
+  {id: 18, name: "Look for (and buy) food produced in your local area", path: "./images/SDGs12logo.svg"},
 ]
 
 const CreateDB = async () => {
@@ -36,27 +37,26 @@ const CreateDB = async () => {
 
       // 9つのランダムなタスクを取得
       const selectedTasks = getRandomTasks(TaskList, 9);
-            // 各タスクを個別の変数に格納
-            const task1 = selectedTasks[0];
-            const task2 = selectedTasks[1];
-            const task3 = selectedTasks[2];
-            const task4 = selectedTasks[3];
-            const task5 = selectedTasks[4];
-            const task6 = selectedTasks[5];
-            const task7 = selectedTasks[6];
-            const task8 = selectedTasks[7];
-            const task9 = selectedTasks[8];
-
-            // 各タスクの確認ログ
-            console.log(task1);
-            console.log(task2);
-            console.log(task3);
-            console.log(task4);
-            console.log(task5);
-            console.log(task6);
-            console.log(task7);
-            console.log(task8);
-            console.log(task9);
+      // 各タスクを個別の変数に格納
+      const task1 = selectedTasks[0];
+      const task2 = selectedTasks[1];
+      const task3 = selectedTasks[2];
+      const task4 = selectedTasks[3];
+      const task5 = selectedTasks[4];
+      const task6 = selectedTasks[5];
+      const task7 = selectedTasks[6];
+      const task8 = selectedTasks[7];
+      const task9 = selectedTasks[8];
+      // 各タスクの確認ログ
+      console.log(task1);
+      console.log(task2);
+      console.log(task3);
+      console.log(task4);
+      console.log(task5);
+      console.log(task6);
+      console.log(task7);
+      console.log(task8);
+      console.log(task9);
 
       // ビンゴ情報のドキュメント作成
       const bingoDocRef = doc(collection(db, 'BingoInfo'), userId );
@@ -99,6 +99,7 @@ const CreateDB = async () => {
         },
       })
       console.log(bingoDocRef);
+      return selectedTasks;
 };
 
 
