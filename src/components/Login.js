@@ -38,7 +38,7 @@ const Login = () => {
         loginPassword
       );
     } catch (error) {
-      alert("メールアドレスまたはパスワードが間違っています");
+      alert("Email address or password is incorrect.");
     }
   };
 

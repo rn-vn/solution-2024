@@ -64,12 +64,10 @@
   color: #735240;
 }
 
+.go-register {
+  text-decoration: underline;
+}
 .go-register:visited {
   text-decoration: none;
   color: #5a3e2f;
-}
-
-.go-register:hover {
-  text-decoration: underline;
-  color: #735240;
 }
