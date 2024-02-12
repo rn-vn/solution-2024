@@ -92,10 +92,13 @@ const GetDB = async () => {
   if (docSnap.exists()) {
     const tasks = docSnap.data();
     console.log(tasks)
+    if (!tasks.task) {
+      return await CreateDB();
+    }
     return tasks;
   } else {
-    console.log("No data")
-    return null;
+    console.log("No data. create DB.")
+    return await CreateDB();
   }
 }
 
