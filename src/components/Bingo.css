@@ -48,3 +48,11 @@
   max-height: 100%;
   border-radius: 10px; /* Match the border-radius of the cell */
 }
+
+.Mission-display{
+  width: 326px; /* Adjust the width as needed */
+  height: 462px; /* Adjust the height as needed */
+  border: 3px solid #735240;
+  background: #FAF1E4; /* Adjust cell background as needed */
+ 
+}

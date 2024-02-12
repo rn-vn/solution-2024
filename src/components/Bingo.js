@@ -12,23 +12,6 @@ import Bingo6 from "./images/bingo6.svg";
 import Bingo7 from "./images/bingo7.svg";
 import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
-import SDGs1logo from "./images/SDGs1logo.svg";
-import SDGs2logo from "./images/SDGs2logo.svg";
-import SDGs3logo from "./images/SDGs3logo.svg";
-import SDGs4logo from "./images/SDGs4logo.svg";
-import SDGs5logo from "./images/SDGs5logo.svg";
-import SDGs6logo from "./images/SDGs6logo.svg";
-import SDGs7logo from "./images/SDGs7logo.svg";
-import SDGs8logo from "./images/SDGs8logo.svg";
-import SDGs9logo from "./images/SDGs9logo.svg";
-import SDGs10logo from "./images/SDGs10logo.svg";
-import SDGs11logo from "./images/SDGs11logo.svg";
-import SDGs12logo from "./images/SDGs12logo.svg";
-import SDGs13logo from "./images/SDGs13logo.svg";
-import SDGs14logo from "./images/SDGs14logo.svg";
-import SDGs15logo from "./images/SDGs15logo.svg";
-import SDGs16logo from "./images/SDGs16logo.svg";
-import SDGs17logo from "./images/SDGs17logo.svg";
 
 const Bingo = () => {
   const [bingo5, setStar] = useState(false);
@@ -69,16 +52,19 @@ const Bingo = () => {
   // 画像配列のマップ
   const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
 
-//画像の参照をキーと結びつける
-const imageMap = [
-  
-  SDGs1logo,SDGs2logo,SDGs3logo,SDGs4logo,SDGs5logo,SDGs6logo,SDGs7logo,SDGs8logo,SDGs9logo,SDGs10logo,SDGs11logo,SDGs12logo,SDGs13logo,SDGs14logo,SDGs15logo,SDGs16logo,SDGs17logo];
 
   return (
     <div className="bingo-main">
-      {!selectedTask ? (
-        <div className="bingo-container">
-          <div className="bingotitle-container">
+
+        { selectedTask && selectedTask.id ? 
+          <div className='Mission-display'>
+            <img src={`${process.env.PUBLIC_URL}/images/${selectedTask.path}`} alt={selectedTask.path} width={87} height={87}/>
+            <p>{selectedTask.name}</p>
+            <button onClick={handleBackClick}>戻る</button>
+          </div>
+          :
+          <div className="bingo-container">
+            <div className="bingotitle-container">
               <img
                 className="bingotitle"
                 src={BingoTitle}
@@ -94,17 +80,8 @@ const imageMap = [
                 </div>
               ))}
             </div>
-        </div>
-      ) : (
-        <div>
-          {/* 画像をマップから取得して表i示 */}
-          {selectedTask && imageMap[selectedTask.id] && (
-            <img src={imageMap[selectedTask.id]} alt={selectedTask.name} width={87} height={87}/>
-          )}
-          <p>{selectedTask.name}</p>
-          <button onClick={handleBackClick}>戻る</button>
-        </div>
-      )}
+          </div>
+        }
     </div>
   );
 };
