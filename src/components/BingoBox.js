@@ -12,6 +12,7 @@ const Bingo1 = () => {
                 <div className = 'image'>
                 </div>
                 <div className = "task">
+                    {/* タスクを記入 */}
                     <p>マイボトルを持参</p>
                 </div>
                 <div className='button'>
