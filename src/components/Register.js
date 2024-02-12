@@ -39,9 +39,7 @@ const Register = () => {
       );
       CreateDB();
     } catch (error) {
-      alert("正しく入力してください");
-      // TODO: 正しいエラーメッセージを記述する
-      // パスワードが6文字以下のエラー？
+      alert("Password must be at least 6 characters.");
     }
   };
 
@@ -57,7 +55,6 @@ const Register = () => {
 
   return (
     <>
-      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/`} />
       ) : (

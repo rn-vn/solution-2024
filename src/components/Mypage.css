@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.current-date {
+  width: 100vh;
+}
+
 .account-information-container {
   width: 90vw;
   height: 50vh;
@@ -16,7 +20,6 @@
 }
 
 .Mypage-email {
-  color: #735240;
   font-size: 20px;
   font-weight: 800;
   word-wrap: break-word;
@@ -25,7 +28,6 @@
 }
 
 .p-footer {
-  color: #735240;
   font-size: 16px;
   word-wrap: break-word;
 }
@@ -38,7 +40,6 @@
   align-items: center;
   padding: 15px 25px 15px;
   display: inline-flex;
-  color: #735240;
   background-color: #FAF3E0;
   font-size: 16px;
 }

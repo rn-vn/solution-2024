@@ -20,7 +20,7 @@ const HomeFooter = () => {
           </a>
         </div>
         <div className="footer-item">
-          <a href="/">
+          <a href="/home-bingo">
             <img src={BacktoHome} alt="Home" width={30} height={30} />
             <p className='p-footer'>Home</p>
           </a>

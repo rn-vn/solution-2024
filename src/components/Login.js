@@ -38,7 +38,7 @@ const Login = () => {
         loginPassword
       );
     } catch (error) {
-      alert("メールアドレスまたはパスワードが間違っています");
+      alert("Email address or password is incorrect.");
     }
   };
 
@@ -53,7 +53,6 @@ const Login = () => {
 
   return (
     <>
-      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/home-bingo/`} />
       ) : (

@@ -47,7 +47,9 @@ const Mypage = () => {
           ) : (
             <>
               <div className="mypage-container">
-                <CurrentDate />
+                <div className="current-date">
+                  <CurrentDate />
+                </div>
                 <div className="account-information-container">
                   <div className="footer-item">
                     <img src={AccuntInfo} alt="Account" width={30} height={30} />

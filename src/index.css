@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #735240
 }
 
 body {
@@ -12,20 +13,20 @@ body {
 
 /* 下に行くほど太くなります */
 @font-face {
-  font-family: "yomogi-regular";
+  font-family: "tsukimi-regular";
   src: url("./components/fonts/TsukimiRounded-Regular.ttf");
 }
 
 @font-face {
-  font-family: "yomogi-medium";
+  font-family: "tsukimi-medium";
   src: url("./components/fonts/TsukimiRounded-Medium.ttf");
 }
 
 @font-face {
-  font-family: "yomogi-semibold";
+  font-family: "tsukimi-semibold";
   src: url("./components/fonts/TsukimiRounded-SemiBold.ttf");
 }
 
 :root {
-  font-family: "yomogi-medium";
+  font-family: "tsukimi-medium";
 }

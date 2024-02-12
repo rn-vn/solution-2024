@@ -1,3 +1,7 @@
+* {
+  font-family: "tsukimi-semibold";
+}
+
 ::selection {
   background-color: #C0C0C0;
 }
@@ -17,14 +21,11 @@
 
 .learn-sdgs {
   padding-top: 40px;
-  color: #735240;
 }
 
 .button,
 .submit {
-  color: #735240;
   border-radius: 10px;
-  font-weight: bold;
   margin: 24px;
   background-color: #FAF3E0;
   padding: 12px 12px;
@@ -48,6 +49,7 @@
   padding: 10px;
   border-radius: 20px;
   line-height: 1.5;
+  outline: none;
   background-color: #FAF3E0;
   border: 3px solid #735240;
 }
@@ -59,5 +61,4 @@
 
 .count-number {
   font-size: 30px;
-  color: #735240;
 }
