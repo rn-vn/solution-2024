@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import "./Bingo.css";
 import BingoTitle from "./images/bingotitle.svg";
 import Bingo1 from "./images/bingo1.svg";
@@ -14,6 +14,14 @@ import Bingo9 from "./images/bingo9.svg";
 
 const Bingo = () => {
 
+  const [currentMissionIndex, setCurrentMissionIndex] = useState(null); // 現在のミッションインデックス
+
+  const handleMissionSelect = (index) => {
+    setCurrentMissionIndex(index); // インデックスを設定
+    console.log('select: ' + index);
+    // ミッション実行する画面を出す
+    // 結果によりStateを変更してデータベースに保存
+  };
 
   return (
     <div className="bingo-main">
@@ -28,31 +36,31 @@ const Bingo = () => {
           />
         </div>
         <div className="bingo-grid">
-          <div className="bingo-cell" id="bingo1">
+          <div className="bingo-cell" id="bingo1" onClick={() => handleMissionSelect(0)} >
             <img className="bingo-cell" src={Bingo1} alt="Bingo 1" />
           </div>
-          <div className="bingo-cell" id="bingo2">
+          <div className="bingo-cell" id="bingo2" onClick={() => handleMissionSelect(1)}>
             <img className="bingo-cell" src={Bingo2} alt="Bingo 2" />
           </div>
-          <div className="bingo-cell" id="bingo3">
+          <div className="bingo-cell" id="bingo3" onClick={() => handleMissionSelect(2)}>
             <img className="bingo-cell" src={Bingo3} alt="Bingo 3" />
           </div>
-          <div className="bingo-cell" id="bingo4">
+          <div className="bingo-cell" id="bingo4" onClick={() => handleMissionSelect(3)}>
             <img className="bingo-cell" src={Bingo4} alt="Bingo 4" />
           </div>
-          <div className="bingo-cell" id="bingo5">
+          <div className="bingo-cell" id="bingo5" onClick={() => handleMissionSelect(4)}>
             <img className="bingo-cell" src={Bingo5} alt="Bingo 5" />
           </div>
-          <div className="bingo-cell" id="bingo6">
+          <div className="bingo-cell" id="bingo6" onClick={() => handleMissionSelect(5)}>
             <img className="bingo-cell" src={Bingo6} alt="Bingo 6" />
           </div>
-          <div className="bingo-cell" id="bingo7">
+          <div className="bingo-cell" id="bingo7" onClick={() => handleMissionSelect(6)}>
             <img className="bingo-cell" src={Bingo7} alt="Bingo 7" />
           </div>
-          <div className="bingo-cell" id="bingo8">
+          <div className="bingo-cell" id="bingo8" onClick={() => handleMissionSelect(7)}>
             <img className="bingo-cell" src={Bingo8} alt="Bingo 8" />
           </div>
-          <div className="bingo-cell" id="bingo9">
+          <div className="bingo-cell" id="bingo9" onClick={() => handleMissionSelect(8)}>
             <img className="bingo-cell" src={Bingo9} alt="Bingo 9" />
           </div>
         </div>
