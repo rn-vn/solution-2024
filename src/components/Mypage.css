@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.current-date {
+  width: 100vh;
+}
+
 .account-information-container {
   width: 90vw;
   height: 50vh;
