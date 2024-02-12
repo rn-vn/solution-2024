@@ -3,12 +3,16 @@ import './CurrentDate.css';
 
 const CurrentDate = () => {
 
-  const currentDate = new Date().toLocaleDateString(); 
+  const currentDate = new Date().toLocaleDateString("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
 
   return (
     <div>
       <div className='currentdate'>
-      <p className="p-currentdate">{currentDate}</p>
+        <p className="p-currentdate">{currentDate}</p>
       </div>
     </div>
   )

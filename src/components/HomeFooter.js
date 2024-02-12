@@ -15,26 +15,26 @@ const HomeFooter = () => {
 
         <div className="footer-item">
           <a href="/learning/">
-            <img src={StudySDGs} alt="SDGsを学習する" width={30} height={30} />
-            <p className='p-footer'>SDGsを<br />学習する</p>
+            <img src={StudySDGs} alt="Study" width={30} height={30} />
+            <p className='p-footer'>Study</p>
           </a>
         </div>
         <div className="footer-item">
-          <a href="/">
-            <img src={BacktoHome} alt="ホーム画面に戻る" width={30} height={30} />
-            <p className='p-footer'>ホーム画面に<br />戻る</p>
+          <a href="/home-bingo">
+            <img src={BacktoHome} alt="Home" width={30} height={30} />
+            <p className='p-footer'>Home</p>
           </a>
         </div>
         <div className="footer-item">
           <a href="/how-to-play/">
-            <img src={HowtoPlay} alt="遊び方を見る" width={30} height={30} />
-            <p className='p-footer'>遊び方を<br />見る</p>
+            <img src={HowtoPlay} alt="HowToPlay" width={30} height={30} />
+            <p className='p-footer'>HowToPlay</p>
           </a>
         </div>
         <div className="footer-item">
           <a href="/my-page/">
-            <img src={AccuntInfo} alt="アカウント情報" width={30} height={30} />
-            <p className='p-footer'>アカウント情報</p>
+            <img src={AccuntInfo} alt="Account" width={30} height={30} />
+            <p className='p-footer'>Account</p>
           </a>
         </div>
 

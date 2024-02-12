@@ -1,9 +1,70 @@
-/* パスワード表示切替アイコンです
-すべてのCSS適用後、位置を変えてください */
+.account-title {
+  text-align: center;
+}
+
+.input-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 0;
+}
+
+.account-form {
+  background-color: #FAF3E0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.input-mail,
+.input-pass {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-form {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.create-button {
+  background-color: #735240;
+  color: #FAF3E0;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.register-button:hover {
+  background-color: #5a3e2f;
+}
 
 .password-icon {
-  position: absolute;
-  left: 295px;
-  top: 25%;
-  transform: translateY(-50%);
+  cursor: pointer;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  margin-top: -50px;
+}
+
+.go-register {
+  text-decoration: underline;
+  color: #5a3e2f;
+}
+
+.go-register:visited {
+  text-decoration: none;
+  color: #5a3e2f;
 }

@@ -10,6 +10,7 @@ import {
 
 import '../normalize.css'
 import './Mypage.css';
+import CurrentDate from './CurrentDate'
 import HomeFooter from './HomeFooter';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
 
@@ -46,15 +47,18 @@ const Mypage = () => {
           ) : (
             <>
               <div className="mypage-container">
-                <div className="accountinformation-container">
+                <div className="current-date">
+                  <CurrentDate />
+                </div>
+                <div className="account-information-container">
                   <div className="footer-item">
-                    <img src={AccuntInfo} alt="アカウント情報" width={30} height={30} />
-                    <p className='p-footer'>アカウント情報</p>
+                    <img src={AccuntInfo} alt="Account" width={30} height={30} />
+                    <p className='p-footer'>Account Info<br />-----------------</p>
                   </div>
 
                   <p className="Mypage-email">{user?.email}</p>
 
-                  <button className="mypage-bottom" onClick={logout}>ログアウト</button>
+                  <button className="mypage-bottom" onClick={logout}>Logout</button>
                 </div>
               </div>
               <HomeFooter />
