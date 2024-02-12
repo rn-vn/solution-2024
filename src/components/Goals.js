@@ -3,18 +3,18 @@ import {collection, getDocs } from "firebase/firestore";
 import { db } from "../FirebaseConfig";
 
 // データを追加するコレクションを指定
-// const usersCollection = collection(db, "Goals");
+//// const usersCollection = collection(db, "Goals");
 
 // 新しいドキュメントを追加
-// const newGoal = {
-//   title: "飢餓をゼロに",
-//   introduction: "飢餓をゼロに"
-// };
+//// const newGoal = {
+////   title: "飢餓をゼロに",
+////   introduction: "飢餓をゼロに"
+//// };
 
 // ドキュメントを追加
-// const docRef = await addDoc(usersCollection, newGoal);
+//// const docRef = await addDoc(usersCollection, newGoal);
 
-// console.log("Document written with ID: ", docRef.id);
+//// console.log("Document written with ID: ", docRef.id);
 
 const GoalsList = () => {
   const [goals, setGoals] = useState([]);
