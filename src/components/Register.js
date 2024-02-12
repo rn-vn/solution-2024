@@ -55,7 +55,6 @@ const Register = () => {
 
   return (
     <>
-      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/`} />
       ) : (

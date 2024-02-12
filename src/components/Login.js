@@ -53,7 +53,6 @@ const Login = () => {
 
   return (
     <>
-      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/home-bingo/`} />
       ) : (
