@@ -14,13 +14,8 @@
 
 .learning-wrap {
   background: #FAF3E0;
-  padding-top: 30px;
   margin: 0px 30px 20px;
   border: 3px solid #735240;
-}
-
-.learn-sdgs {
-  padding-top: 40px;
 }
 
 .button,
@@ -32,6 +27,13 @@
   text-align: center;
   border-radius: 100px;
   border: 3px solid #735240;
+  cursor: pointer;
+}
+
+.button:hover,
+.submit:hover {
+  background-color: #735240;
+  color: #FAF3E0;
   cursor: pointer;
 }
 
