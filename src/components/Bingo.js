@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Bingo.css";
+import { CreateDB } from './CreateDB'; // 必要に応じてインポートパスを調整
 import BingoTitle from "./images/bingotitle.svg";
 import Bingo1 from "./images/bingo1.svg";
 import Bingo2 from "./images/bingo2.svg";
@@ -13,20 +14,32 @@ import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
 
 const Bingo = () => {
+  const [selectedTasks, setSelectedTasks] = useState([]);
 
-  const [currentMissionIndex, setCurrentMissionIndex] = useState(null); // 現在のミッションインデックス
+  useState(() => {
+    async function fetchTasks() {
+      const tasks = await CreateDB();
+      setSelectedTasks(tasks);
+    }
+    fetchTasks();
+  }, []);
 
   const handleMissionSelect = (index) => {
-    setCurrentMissionIndex(index); // インデックスを設定
-    console.log('select: ' + index);
-    // ミッション実行する画面を出す
-    // 結果によりStateを変更してデータベースに保存
+    if (selectedTasks && selectedTasks.length > index) {
+      const selectedTask = selectedTasks[index];
+      console.log(`Selected Task ID: ${selectedTask.id}, Name: ${selectedTask.name}`);
+    } else {
+      console.log("Task data is not available.");
+    }
   };
+
+  // 画像配列のマップ
+  const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
 
   return (
     <div className="bingo-main">
       <div className="bingo-container">
-        <div className="bingotitle-container">
+      <div className="bingotitle-container">
           <img
             className="bingotitle"
             src={BingoTitle}
@@ -36,33 +49,11 @@ const Bingo = () => {
           />
         </div>
         <div className="bingo-grid">
-          <div className="bingo-cell" id="bingo1" onClick={() => handleMissionSelect(0)} >
-            <img className="bingo-cell" src={Bingo1} alt="Bingo 1" />
-          </div>
-          <div className="bingo-cell" id="bingo2" onClick={() => handleMissionSelect(1)}>
-            <img className="bingo-cell" src={Bingo2} alt="Bingo 2" />
-          </div>
-          <div className="bingo-cell" id="bingo3" onClick={() => handleMissionSelect(2)}>
-            <img className="bingo-cell" src={Bingo3} alt="Bingo 3" />
-          </div>
-          <div className="bingo-cell" id="bingo4" onClick={() => handleMissionSelect(3)}>
-            <img className="bingo-cell" src={Bingo4} alt="Bingo 4" />
-          </div>
-          <div className="bingo-cell" id="bingo5" onClick={() => handleMissionSelect(4)}>
-            <img className="bingo-cell" src={Bingo5} alt="Bingo 5" />
-          </div>
-          <div className="bingo-cell" id="bingo6" onClick={() => handleMissionSelect(5)}>
-            <img className="bingo-cell" src={Bingo6} alt="Bingo 6" />
-          </div>
-          <div className="bingo-cell" id="bingo7" onClick={() => handleMissionSelect(6)}>
-            <img className="bingo-cell" src={Bingo7} alt="Bingo 7" />
-          </div>
-          <div className="bingo-cell" id="bingo8" onClick={() => handleMissionSelect(7)}>
-            <img className="bingo-cell" src={Bingo8} alt="Bingo 8" />
-          </div>
-          <div className="bingo-cell" id="bingo9" onClick={() => handleMissionSelect(8)}>
-            <img className="bingo-cell" src={Bingo9} alt="Bingo 9" />
-          </div>
+          {bingoImages.map((Image, index) => (
+            <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
+              <img className="bingo-cell" src={Image} alt={`Bingo ${index + 1}`} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
