@@ -14,6 +14,16 @@ import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
 
 const Bingo = () => {
+  const [bingo5, setStar] = useState(false);
+  // 初期状態にBingo5を設定
+
+  useEffect(() => {
+    // starEarnedがtrueだった場合、localStorageに星を表示する
+    if (localStorage.getItem('starEarned') === 'true') {
+      setStar(Star);
+    }
+  }, []);
+  
   const [selectedTasks, setSelectedTasks] = useState([]);
 
   useState(() => {
@@ -34,7 +44,7 @@ const Bingo = () => {
   };
 
   // 画像配列のマップ
-  const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
+  const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, bingo5 ? Star:Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
   return (
     <div className="bingo-main">
       <div className="bingo-container">

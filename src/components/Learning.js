@@ -88,7 +88,7 @@ const Learning = () => {
   const textCountCheck = () => {
     const count = document.getElementById('count').innerHTML;
 
-    if (parseInt(count) <= 100) {
+    if (parseInt(count) < 100) {
       alert('Please enter more than 100 characters!');
     }
     else {
