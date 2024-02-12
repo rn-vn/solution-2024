@@ -31,6 +31,16 @@ import SDGs16logo from "./images/SDGs16logo.svg";
 import SDGs17logo from "./images/SDGs17logo.svg";
 
 const Bingo = () => {
+  const [bingo5, setStar] = useState(false);
+  // 初期状態にBingo5を設定
+
+  useEffect(() => {
+    // starEarnedがtrueだった場合、localStorageに星を表示する
+    if (localStorage.getItem('starEarned') === 'true') {
+      setStar(Star);
+    }
+  }, []);
+  
   const [selectedTasks, setSelectedTasks] = useState([]);
   const [selectedTask, setSelectedTask] = useState(null); // 選択されたタスクを管理するための状態
 
