@@ -3,7 +3,8 @@
   margin-top: 0%;
   position: fixed;
   width: 100%;
-  background-color: #FAF3E0; /* Adjust the color to match your image */
+  height: 15vh;
+  background-color: #faf3e0; /* Adjust the color to match your image */
 }
 
 .home-footer {
@@ -24,25 +25,19 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #000; 
+  color: #000;
 }
 
 .footer-icon {
   margin-bottom: 5px;
 }
 
-
-a{
+a {
   text-decoration: none;
 }
 
-.p-footer{
-color: #735240;
- font-size: 12px;
- font-family: Inter;
- font-weight: 800;
- word-wrap: break-word
+.p-footer {
+  font-size: 12px;
+  font-weight: 800;
+  word-wrap: break-word;
 }
-
-
-

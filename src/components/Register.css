@@ -1,9 +1,0 @@
-/* パスワード表示切替アイコンです
-すべてのCSS適用後、位置を変えてください */
-
-.password-icon {
-  position: absolute;
-  left: 295px;
-  top: 25%;
-  transform: translateY(-50%);
-}

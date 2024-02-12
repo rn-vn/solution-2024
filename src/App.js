@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 
 // 色々import
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -16,6 +17,7 @@ import BingoBox from './components/BingoBox';
  //import {signInWithPopup} from "firebase/auth";
 
 function App() {
+
   return (
     <div className="container">
       <BrowserRouter>

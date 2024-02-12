@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../normalize.css'
-import './Register.css'
+import './LoginRegister.css'
+import { CreateDB } from "./CreateDB.js";
 
 import {
   createUserWithEmailAndPassword,
@@ -36,8 +37,9 @@ const Register = () => {
         registerEmail,
         registerPassword
       );
+      CreateDB();
     } catch (error) {
-      alert("正しく入力してください");
+      alert("Password must be at least 6 characters.");
     }
   };
 
@@ -53,45 +55,48 @@ const Register = () => {
 
   return (
     <>
-      {/* ↓ログインできていればホームに遷移 */}
       {user ? (
         <Navigate to={`/`} />
       ) : (
         <>
-          <h1>新規登録</h1>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>メールアドレス</label>
-              <input
-                name="email"
-                type="email"
-                value={registerEmail}
-                onChange={(e) => setRegisterEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>パスワード</label>
-              <input
-                name="password"
-                value={registerPassword}
-                type={passwordType}
-                onChange={(e) => setRegisterPassword(e.target.value)}
-              />
-              {passwordType === "password" && (
-                <VisibilityOffIcon
-                  onClick={() => visibilityChange("text")}
-                  className="password-icon"
+          <h1 className="account-title">Register</h1>
+          <div className="input-main">
+            <form className="account-form" onSubmit={handleSubmit}>
+              <div>
+                <label className="input-mail">Mail Address</label>
+                <input
+                  className="input-form"
+                  name="email"
+                  type="email"
+                  value={registerEmail}
+                  onChange={(e) => setRegisterEmail(e.target.value)}
                 />
-              )}
-              {passwordType === "text" && (
-                <VisibilityIcon
-                  onClick={() => visibilityChange("password")}
-                  className="password-icon"
+              </div>
+              <div>
+                <label className="input-pass">Password</label>
+                <input
+                  className="input-form"
+                  name="password"
+                  value={registerPassword}
+                  type={passwordType}
+                  onChange={(e) => setRegisterPassword(e.target.value)}
                 />
-              )}
-            </div>
-            <button>登録する</button>
-          </form>
+                {passwordType === "password" && (
+                  <VisibilityOffIcon
+                    onClick={() => visibilityChange("text")}
+                    className="password-icon"
+                  />
+                )}
+                {passwordType === "text" && (
+                  <VisibilityIcon
+                    onClick={() => visibilityChange("password")}
+                    className="password-icon"
+                  />
+                )}
+              </div>
+              <button className="create-button">Register</button>
+            </form>
+          </div>
         </>
       )}
     </>

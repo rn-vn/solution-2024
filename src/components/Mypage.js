@@ -10,9 +10,9 @@ import {
 
 import '../normalize.css'
 import './Mypage.css';
+import CurrentDate from './CurrentDate'
 import HomeFooter from './HomeFooter';
 import AccuntInfo from './images/Accuntinfo-icon.svg';
-import DeteteIcon from './images/delete-icon.svg';
 
 
 const Mypage = () => {
@@ -46,18 +46,20 @@ const Mypage = () => {
             <Navigate to={`/`} />
           ) : (
             <>
-            <div className="mypage-container">
-              <div className="accountinformation-container">
-              <img src={DeteteIcon} alt="アカウント情報" width={30} height={30}/>
-              <div className="footer-item">
-              <img src={AccuntInfo} alt="アカウント情報" width={30} height={30}/>
-              <p className='p-footer'>アカウント情報</p>
-              </div>
+              <div className="mypage-container">
+                <div className="current-date">
+                  <CurrentDate />
+                </div>
+                <div className="account-information-container">
+                  <div className="footer-item">
+                    <img src={AccuntInfo} alt="Account" width={30} height={30} />
+                    <p className='p-footer'>Account Info<br />-----------------</p>
+                  </div>
 
-              <p className="Mypage-email">{user?.email}</p>
+                  <p className="Mypage-email">{user?.email}</p>
 
-              <button  className="mypage-bottom" onClick={logout}>ログアウト</button>
-              </div>
+                  <button className="mypage-bottom" onClick={logout}>Logout</button>
+                </div>
               </div>
               <HomeFooter />
             </>

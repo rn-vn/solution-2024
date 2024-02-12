@@ -1,4 +1,8 @@
-.home-bingo-container{
+.home-main {
+  height: 100vh;
   background: #DDF0C6;
-  margin-bottom: 0px;
+}
+
+.home-wrap {
+  height: 56vh;
 }

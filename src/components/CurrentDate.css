@@ -1,15 +1,11 @@
-.currentdate{
+/* .currentdate{
   height: 10vh;
-}
+} */
 
-.p-currentdate{
-color: #735240;
-font-size: 24px;
-font-family: Inter;
- font-weight: 800;
- word-wrap: break-word;
- text-align: center;
- padding-top: 41px;
- padding-bottom: 10px;
+.p-currentdate {
+  font-size: 24px;
+  font-weight: 800;
+  word-wrap: break-word;
+  text-align: center;
+  padding-top: 3vh;
 }
-

@@ -1,23 +1,21 @@
-// いい教材あればURL追加していってください！
-
 const SettingUrl = [
-  'https://sdgs.edutown.jp/info/goals/goals-1.html',
-  'https://sdgs.edutown.jp/info/goals/goals-2.html',
-  'https://sdgs.edutown.jp/info/goals/goals-3.html',
-  'https://sdgs.edutown.jp/info/goals/goals-4.html',
-  'https://sdgs.edutown.jp/info/goals/goals-5.html',
-  'https://sdgs.edutown.jp/info/goals/goals-6.html',
-  'https://sdgs.edutown.jp/info/goals/goals-7.html',
-  'https://sdgs.edutown.jp/info/goals/goals-8.html',
-  'https://sdgs.edutown.jp/info/goals/goals-9.html',
-  'https://sdgs.edutown.jp/info/goals/goals-10.html',
-  'https://sdgs.edutown.jp/info/goals/goals-11.html',
-  'https://sdgs.edutown.jp/info/goals/goals-12.html',
-  'https://sdgs.edutown.jp/info/goals/goals-13.html',
-  'https://sdgs.edutown.jp/info/goals/goals-14.html',
-  'https://sdgs.edutown.jp/info/goals/goals-15.html',
-  'https://sdgs.edutown.jp/info/goals/goals-16.html',
-  'https://sdgs.edutown.jp/info/goals/goals-17.html',
+  'https://www.un.org/sustainabledevelopment/poverty/',
+  'https://www.un.org/sustainabledevelopment/hunger/',
+  'https://www.un.org/sustainabledevelopment/health/',
+  'https://www.un.org/sustainabledevelopment/education/',
+  'https://www.un.org/sustainabledevelopment/gender-equality/',
+  'https://www.un.org/sustainabledevelopment/water-and-sanitation/',
+  'https://www.un.org/sustainabledevelopment/energy',
+  'https://www.un.org/sustainabledevelopment/economic-growth/',
+  'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
+  'https://www.un.org/sustainabledevelopment/inequality/',
+  'https://www.un.org/sustainabledevelopment/cities/',
+  'https://www.un.org/sustainabledevelopment/sustainable-consumption-production/',
+  'https://www.un.org/sustainabledevelopment/climate-change/',
+  'https://www.un.org/sustainabledevelopment/oceans/',
+  'https://www.un.org/sustainabledevelopment/biodiversity/',
+  'https://www.un.org/sustainabledevelopment/peace-justice/',
+  'https://www.un.org/sustainabledevelopment/globalpartnerships/'
 ];
 
 export default SettingUrl;
