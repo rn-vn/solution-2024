@@ -13,6 +13,8 @@ import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
 
 const Bingo = () => {
+
+
   return (
     <div className="bingo-main">
       <div className="bingo-container">
