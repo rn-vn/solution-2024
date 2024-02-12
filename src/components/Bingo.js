@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Bingo.css";
 import BingoTitle from "./images/bingotitle.svg";
 import Bingo1 from "./images/bingo1.svg";
@@ -13,7 +13,15 @@ import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
 
 const Bingo = () => {
+  const [bingo5Src, setStar] = useState(Bingo5);
+  // 初期状態にBingo5を設定
 
+  useEffect(() => {
+    // starEarnedがtrueだった場合、localStorageに星を表示する
+    if (localStorage.getItem('starEarned') === 'true') {
+      setStar(Star);
+    }
+  }, []);
 
   return (
     <div className="bingo-main">
@@ -41,7 +49,7 @@ const Bingo = () => {
             <img className="bingo-cell" src={Bingo4} alt="Bingo 4" />
           </div>
           <div className="bingo-cell" id="bingo5">
-            <img className="bingo-cell" src={Bingo5} alt="Bingo 5" />
+            <img className="bingo-cell" src={bingo5Src} alt="Bingo 5" />
           </div>
           <div className="bingo-cell" id="bingo6">
             <img className="bingo-cell" src={Bingo6} alt="Bingo 6" />

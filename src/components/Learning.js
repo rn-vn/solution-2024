@@ -1,11 +1,3 @@
-// ログイン判定 追加
-
-/**
- * TODO
- * Submitボタンクリック時の動作
- * 字数制約を設ける
- */
-
 import '../normalize.css'
 import './Learning.css'
 import React from 'react'
@@ -50,6 +42,9 @@ const Learning = () => {
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * Urls.length);
       setCurrentUrl(Urls[randomIndex]);
+
+      // 日付が変わったら星を削除
+      localStorage.removeItem('starEarned');
     }, 1000 * 60 * 60 * 24);
 
     setTimeout(() => {
@@ -91,13 +86,14 @@ const Learning = () => {
   const navigate = useNavigate();
 
   const textCountCheck = () => {
-    const count = document.getElementById('count');
+    const count = document.getElementById('count').innerHTML;
 
-    if (count.length <= 100) {
+    if (parseInt(count) <= 100) {
       alert('Please enter more than 100 characters!');
     }
     else {
-      alert('You got a star!');
+      alert('You have scored a star in the middle of your bingo!');
+      localStorage.setItem('starEarned', 'true');
       navigate('/home-bingo');
     }
   }
@@ -138,10 +134,10 @@ const Learning = () => {
             <>
               <div className='learning-main'>
                 <div className='learning-wrap'>
-                  <img src={Goals} alt='the global goals' />
-                  <h2 className='learn-sdgs'>Let's learn about the SDGs!</h2>
+                  <img src={Goals} width={80} alt='the global goals' />
+                  <h2 className='learn-sdgs'>Let's learn about the SDGs !</h2>
                   <div className='task-url'>
-                    <input type="button" className='button' value="Click and Learn!" onClick={() => visitRandomLink()} />
+                    <input type="button" className='button' value="Click and Learn" onClick={() => visitRandomLink()} />
                   </div>
 
                   {/* 回答欄 */}
@@ -150,7 +146,7 @@ const Learning = () => {
                     <span id="count">0</span>
                     <span className='count-number'><b>/100</b></span>
                   </div>
-                  <input type='submit' id='submit' className='submit' onClick={AddStar} value='Click and Submit!' />
+                  <input type='submit' id='submit' className='submit' onClick={AddStar} value='Click and Submit' />
                 </div>
                 <HomeFooter />
               </div>
