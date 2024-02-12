@@ -27,7 +27,7 @@ const Bingo = () => {
   const handleMissionSelect = (index) => {
     if (selectedTasks && selectedTasks.length > index) {
       const selectedTask = selectedTasks[index];
-      console.log(`Selected Task ID: ${selectedTask.id}, Name: ${selectedTask.name}`);
+      console.log(`Selected Task ID: ${selectedTask.id}, Name: ${selectedTask.name}, Path: ${selectedTask.path}`);
     } else {
       console.log("Task data is not available.");
     }
