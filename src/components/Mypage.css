@@ -27,13 +27,7 @@
   margin-bottom: 5vh;
 }
 
-.p-footer {
-  font-size: 16px;
-  word-wrap: break-word;
-}
-
 .mypage-bottom {
-  padding: 10px;
   border-radius: 25px;
   border: 2px #735240 solid;
   justify-content: center;
