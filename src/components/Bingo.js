@@ -25,7 +25,7 @@ const Bingo = () => {
       setStar(Star);
     }
   }, []);
-  
+
   const [selectedTasks, setSelectedTasks] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null); // 選択されたタスクを管理するための状態
@@ -46,7 +46,7 @@ const Bingo = () => {
 
   const handleMissionSelect = async (index) => {
     if (selectedTasks) {
-      if (index == 4) {
+      if (index === 4) {
         let tasks = selectedTasks;
         tasks.status[index] = 1;
         setSelectedTasks(tasks);
@@ -68,8 +68,8 @@ const Bingo = () => {
     setSelectedTask(null); // 選択されたタスクの状態をリセット
   };
 
-   // 「clear」ボタンのクリックハンドラ
-   const handleClearClick = async () => {
+  // 「clear」ボタンのクリックハンドラ
+  const handleClearClick = async () => {
     const index = selectedIndex;
     setSelectedTask(null); // 選択されたタスクの状態をリセット
     setSelectedIndex(null);
@@ -84,29 +84,29 @@ const Bingo = () => {
 
   return (
     <div className="bingo-main">
-        { selectedTask ? 
-          <div className='Mission-display'>
-            <img src={`${process.env.PUBLIC_URL}/images/${selectedTask.path}`} alt={selectedTask.path} width={87} height={87}/>
-            <p>{selectedTask.name}</p>
-            <button onClick={handleClearClick}>clear</button>
-            <button onClick={handleBackClick}>戻る</button>
+      {selectedTask ?
+        <div className='mission-display'>
+          <img className='eachtask-img' src={`${process.env.PUBLIC_URL}/images/${selectedTask.path}`} alt={selectedTask.path} width={120} height={120} />
+          <p className='eachtask-title'>{selectedTask.name}</p>
+          <button className='mission-clear-button' onClick={handleClearClick}>Clear!</button>
+          <button className='mission-return-button' onClick={handleBackClick}>return</button>
+        </div>
+        :
+        <div className="bingo-container">
+          <div className="bingotitle-container">
+            <img
+              className="bingotitle"
+              src={BingoTitle}
+              alt="bingotitle"
+              width={160}
+              height={69}
+            />
           </div>
-          :
-          <div className="bingo-container">
-            <div className="bingotitle-container">
-              <img
-                className="bingotitle"
-                src={BingoTitle}
-                alt="bingotitle"
-                width={160}
-                height={69}
-              />
-            </div>
-            <div className="bingo-grid">
-              {
-                bingoImages.map((Image, index) => (
-                  (selectedTasks && selectedTasks.status[index] === 1) ? 
-                    ( index === 4 ?
+          <div className="bingo-grid">
+            {
+              bingoImages.map((Image, index) => (
+                (selectedTasks && selectedTasks.status[index] === 1) ?
+                  (index === 4 ?
                     <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
                       <img src={Star} alt={`Bingo ${index + 1}`} />
                     </div>
@@ -114,17 +114,17 @@ const Bingo = () => {
                     <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
                       <img src={Clear} alt={`Bingo ${index + 1}`} />
                     </div>
-                    )
+                  )
                   :
                   <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
                     <img src={Image} alt={`Bingo ${index + 1}`} />
                   </div>
-                ))
-              }
-            </div>
-            <button onClick={initializeTasks}>shuffle</button>
+              ))
+            }
           </div>
-        }
+          <button className='shuffle-button' onClick={initializeTasks}>shuffle</button>
+        </div>
+      }
     </div>
   );
 };
