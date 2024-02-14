@@ -1,0 +1,45 @@
+.mypage-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  justify-content: center;
+}
+
+.current-date {
+  width: 100vh;
+}
+
+.account-information-container {
+  width: 90vw;
+  height: 50vh;
+  padding: 20px;
+  background-color: #FAF3E0;
+  border: 3px #735240 solid;
+  border-radius: 20px;
+}
+
+.Mypage-email {
+  font-size: 20px;
+  font-weight: 800;
+  word-wrap: break-word;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.mypage-bottom {
+  border-radius: 25px;
+  border: 2px #735240 solid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px 15px;
+  display: inline-flex;
+  background-color: #FAF3E0;
+  font-size: 16px;
+}
+
+.mypage-bottom:hover {
+  background-color: #735240;
+  color: #FAF3E0;
+  cursor: pointer;
+}
