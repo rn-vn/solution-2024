@@ -1,0 +1,107 @@
+.bingo-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.mission-display {
+  text-align: center;
+  width: 80vw;
+  height: 60vh;
+  border: 3px solid #735240;
+  background: #FAF1E4;
+}
+
+.eachtask-img,
+.eachtask-title {
+  margin-top: 5vh;
+}
+
+.eachtask-title {
+  font-size: 16px;
+}
+
+.mission-clear-button {
+  margin-top: 5vh;
+  border-radius: 25px;
+  border: 2px #735240 solid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px 10px;
+  background-color: #FAF3E0;
+  font-size: 24px;
+}
+
+.mission-clear-button:hover {
+  background-color: #735240;
+  color: #FAF3E0;
+  cursor: pointer;
+}
+
+.mission-return-button,
+.shuffle-button {
+  border-radius: 25px;
+  border: 2px #735240 solid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px 10px;
+  display: inline-flex;
+  background-color: #FAF3E0;
+  font-size: 16px;
+}
+
+.mission-return-button,
+.mission-clear-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+.shuffle-button {
+  margin-top: 15px;
+}
+
+.mission-return-button:hover,
+.shuffle-button:hover {
+  background-color: #735240;
+  color: #FAF3E0;
+  cursor: pointer;
+}
+
+.bingo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 362px;
+  height: 456px;
+  background: #FAF1E4;
+  border-radius: 20px;
+  border: 3px solid #735240;
+  padding: 2rem;
+}
+
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates a 3x3 grid */
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.bingo-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 87px;
+  height: 87px;
+  background: #FAF1E4;
+  border-radius: 10px;
+}
+
+.bingo-cell img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}

@@ -8,6 +8,13 @@ import {
   Navigate
 } from "react-router-dom";
 
+import '../normalize.css'
+import './Mypage.css';
+import CurrentDate from './CurrentDate'
+import HomeFooter from './HomeFooter';
+import AccuntInfo from './images/Accuntinfo-icon.svg';
+
+
 const Mypage = () => {
   /* ↓state変数「user」を定義 */
   const [user, setUser] = useState("");
@@ -27,7 +34,7 @@ const Mypage = () => {
   /* ↓関数「logout」を定義 */
   const logout = async () => {
     await signOut(auth);
-    navigate("/login/");
+    navigate("/");
   }
 
   return (
@@ -36,12 +43,25 @@ const Mypage = () => {
       {!loading && (
         <>
           {!user ? (
-            <Navigate to={`/login/`} />
+            <Navigate to={`/`} />
           ) : (
             <>
-              <h1>マイページ</h1>
-              <p>{user?.email}</p>
-              <button onClick={logout}>ログアウト</button>
+              <div className="mypage-container">
+                <div className="current-date">
+                  <CurrentDate />
+                </div>
+                <div className="account-information-container">
+                  <div className="footer-item">
+                    <img src={AccuntInfo} alt="Account" width={30} height={30} />
+                    <p className='p-footer'>Account Info<br />-----------------</p>
+                  </div>
+
+                  <p className="Mypage-email">{user?.email}</p>
+
+                  <button className="mypage-bottom" onClick={logout}>Logout</button>
+                </div>
+              </div>
+              <HomeFooter />
             </>
           )}
         </>

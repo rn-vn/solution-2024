@@ -1,5 +1,32 @@
+/* 共通CSS */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #735240
+}
+
+body {
+  background-color: #DDF0C6;
+}
+
+/* 下に行くほど太くなります */
+@font-face {
+  font-family: "tsukimi-regular";
+  src: url("./components/fonts/TsukimiRounded-Regular.ttf");
+}
+
+@font-face {
+  font-family: "tsukimi-medium";
+  src: url("./components/fonts/TsukimiRounded-Medium.ttf");
+}
+
+@font-face {
+  font-family: "tsukimi-semibold";
+  src: url("./components/fonts/TsukimiRounded-SemiBold.ttf");
+}
+
+:root {
+  font-family: "tsukimi-medium";
 }
