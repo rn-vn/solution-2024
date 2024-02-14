@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Bingo.css";
 import { CreateDB, GetDB, WriteDB } from './CreateDB'; // 必要に応じてインポートパスを調整
+import  checkBingo  from './CheckBingo'; 
 import BingoTitle from "./images/bingotitle.svg";
 import Bingo1 from "./images/bingo1.svg";
 import Bingo2 from "./images/bingo2.svg";
@@ -14,6 +15,7 @@ import Bingo7 from "./images/bingo7.svg";
 import Bingo8 from "./images/bingo8.svg";
 import Bingo9 from "./images/bingo9.svg";
 import Clear from "./images/bingoclear.svg";
+import Complete from "./images/complete.svg";
 
 const Bingo = () => {
   const [bingo5, setStar] = useState(false);
@@ -30,6 +32,7 @@ const Bingo = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null); // 選択されたタスクを管理するための状態
   const navigate = useNavigate();
+
 
   useEffect(() => {
     async function fetchTasks() {
@@ -82,6 +85,17 @@ const Bingo = () => {
   // 画像配列のマップ
   const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
 
+  // ビンゴ判定
+  const [bingo, setBingo] = useState(false);
+  useEffect(() => {
+    if (checkBingo(selectedTasks)) {
+      setBingo(true);
+      console.log("BINGO!");
+    } else {
+      setBingo(false);
+    }
+  }, [selectedTasks]);
+
   return (
     <div className="bingo-main">
       {selectedTask ?
@@ -121,8 +135,10 @@ const Bingo = () => {
                   </div>
               ))
             }
+            {bingo && <img src={Complete} alt="Complete" className="complete" />}
           </div>
           <button className='shuffle-button' onClick={initializeTasks}>shuffle</button>
+          
         </div>
       }
     </div>

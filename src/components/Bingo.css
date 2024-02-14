@@ -83,6 +83,7 @@
 }
 
 .bingo-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* Creates a 3x3 grid */
@@ -104,4 +105,11 @@
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
+}
+
+.complete {
+  position: absolute;
+  top: -16px;
+  left: -32px;
+  mix-blend-mode: color-burn;
 }
