@@ -53,15 +53,15 @@ const Mypage = () => {
                 <div className="account-information-container">
                   <div className="footer-item">
                     <img src={AccuntInfo} alt="Account" width={30} height={30} />
-                    <p className='p-footer'>Account Info<br />-----------------</p>
+                    <p>Account Info<br />-----------------</p>
                   </div>
 
                   <p className="Mypage-email">{user?.email}</p>
 
                   <button className="mypage-bottom" onClick={logout}>Logout</button>
                 </div>
-              </div>
               <HomeFooter />
+              </div>
             </>
           )}
         </>
