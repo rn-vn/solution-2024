@@ -85,19 +85,6 @@ const Learning = () => {
 
   const navigate = useNavigate();
 
-  const textCountCheck = () => {
-    const count = document.getElementById('count').innerHTML;
-
-    if (parseInt(count) < 100) {
-      alert('Please enter more than 100 characters!');
-    }
-    else {
-      alert('You have scored a star in the middle of your bingo!');
-      localStorage.setItem('starEarned', 'true');
-      navigate('/home-bingo');
-    }
-  }
-
   /**
    * ログイン判定
    * @param {string} user - ユーザー情報
@@ -119,8 +106,16 @@ const Learning = () => {
    */
 
   const AddStar = () => {
-    const submitCheck = document.getElementById('submit');
-    submitCheck.addEventListener('click', textCountCheck);
+    const count = document.getElementById('count').innerHTML;
+
+    if (parseInt(count) < 100) {
+      alert('Please enter more than 100 characters!');
+    }
+    else {
+      alert('You have scored a star in the middle of your bingo!');
+      localStorage.setItem('starEarned', 'true');
+      navigate('/home-bingo', { state: "star" });
+    }
   }
 
   return (

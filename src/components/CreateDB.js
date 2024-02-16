@@ -84,7 +84,7 @@ const CreateDB = async () => {
 const GetDB = async () => {
   // ユーザーID取得
   const userId = auth.currentUser.uid;
-  console.log(userId);
+  console.log("GetDB");
 
   // ビンゴ情報のドキュメント取得
   const bingoDocRef = doc(collection(db, 'BingoInfo'), userId);
