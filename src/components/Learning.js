@@ -1,3 +1,8 @@
+/**
+ * 文字数じゃなくて単語数カウントにする
+ * 提出ボタンを押して条件を満たした場合のみ星にする
+ */
+
 import '../normalize.css'
 import './Learning.css'
 import React from 'react'
@@ -8,6 +13,7 @@ import { auth } from "../FirebaseConfig.js";
 import { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
+import Complete from "./images/complete.svg";
 
 const Learning = () => {
   /**
@@ -43,8 +49,6 @@ const Learning = () => {
       const randomIndex = Math.floor(Math.random() * Urls.length);
       setCurrentUrl(Urls[randomIndex]);
 
-      // 日付が変わったら星を削除
-      localStorage.removeItem('starEarned');
     }, 1000 * 60 * 60 * 24);
 
     setTimeout(() => {
@@ -62,41 +66,50 @@ const Learning = () => {
     window.open(currentUrl, '_blank');
   };
 
-  // テキストボックスの文字数をカウント
-  const textCountStyle = () => {
-    const text = document.getElementById('input').value;
-    const count = document.getElementById('count');
-
-    const spaceCharactor = text.match(/\S/g);
-    if (spaceCharactor !== null) {
-      count.innerHTML = `${spaceCharactor.length}`;
-      count.style.fontSize = '24px';
-      // 100文字以下のスタイル適用
-      if (text.length >= 100) {
-        count.style.color = '#735240';
-        count.style.fontSize = '30px';
-      } else {
-        count.style.color = 'red';
-      }
-    } else {
-      count.innerHTML = '0';
-    }
-  }
-
   const navigate = useNavigate();
 
-  const textCountCheck = () => {
-    const count = document.getElementById('count').innerHTML;
+  const [wordCount, setWordCount] = useState(0);
 
-    if (parseInt(count) < 100) {
-      alert('Please enter more than 100 characters!');
+  // テキストボックスの文字数をカウント
+  const textCountStyle = () => {
+    const textArea = document.getElementById('input');
+    const countDisplay = document.getElementById('count');
+    const words = textArea.value.trim().split(/\s+/);
+    const wordCount = words.filter(word => word.length > 0).length;
+    countDisplay.innerHTML = wordCount;
+
+    if (wordCount >= 30) {
+      countDisplay.style.color = '#735240';
+      countDisplay.style.fontSize = '30px';
+    } else {
+      countDisplay.style.color = 'red';
+      countDisplay.style.fontSize = '24px';
     }
-    else {
+  };
+
+  useEffect(() => {
+    if (wordCount >= 30) {
+      setWordCount(true);
+    } else {
+      setWordCount(false);
+    }
+  }, [wordCount]);
+
+
+  const textCountCheck = () => {
+    const count = parseInt(document.getElementById('count').innerHTML, 10);
+
+    if (count >= 30) {
       alert('You have scored a star in the middle of your bingo!');
       localStorage.setItem('starEarned', 'true');
+      console.log(localStorage.getItem('starEarned'));
       navigate('/home-bingo');
+    } else {
+      localStorage.setItem('starEarned', 'false');
+      console.log(localStorage.getItem('starEarned'));
+      alert('Please enter 30 words or more!');
     }
-  }
+  };
 
   /**
    * ログイン判定
@@ -121,7 +134,7 @@ const Learning = () => {
   const AddStar = () => {
     const submitCheck = document.getElementById('submit');
     submitCheck.addEventListener('click', textCountCheck);
-  }
+  };
 
   return (
     <>
@@ -144,10 +157,11 @@ const Learning = () => {
                   <textarea id="input" onChange={() => textCountStyle()} />
                   <div>
                     <span id="count">0</span>
-                    <span className='count-number'><b>/100</b></span>
+                    <span className='count-number'><b>/30</b></span>
                   </div>
                   <input type='submit' id='submit' className='submit' onClick={AddStar} value='Click and Submit' />
                 </div>
+                  {wordCount && <img src={Complete} alt="Complete" className="complete" />}
                 <HomeFooter />
               </div>
             </>

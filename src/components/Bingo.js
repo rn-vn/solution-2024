@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Bingo.css";
 import { CreateDB, GetDB, WriteDB } from './CreateDB'; // 必要に応じてインポートパスを調整
-import  checkBingo  from './CheckBingo'; 
+import checkBingo from './CheckBingo';
 import BingoTitle from "./images/bingotitle.svg";
 import Bingo1 from "./images/bingo1.svg";
 import Bingo2 from "./images/bingo2.svg";
@@ -18,21 +18,11 @@ import Clear from "./images/bingoclear.svg";
 import Complete from "./images/complete.svg";
 
 const Bingo = () => {
-  const [bingo5, setStar] = useState(false);
-  // 初期状態にBingo5を設定
-
-  useEffect(() => {
-    // starEarnedがtrueだった場合、localStorageに星を表示する
-    if (localStorage.getItem('starEarned') === 'true') {
-      setStar(Star);
-    }
-  }, []);
 
   const [selectedTasks, setSelectedTasks] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null); // 選択されたタスクを管理するための状態
   const navigate = useNavigate();
-
 
   useEffect(() => {
     async function fetchTasks() {
@@ -50,15 +40,19 @@ const Bingo = () => {
   const handleMissionSelect = async (index) => {
     if (selectedTasks) {
       if (index === 4) {
-        let tasks = selectedTasks;
-        tasks.status[index] = 1;
-        setSelectedTasks(tasks);
-        console.log(tasks.status);
-        await WriteDB(tasks);
         navigate("/Learning");
+        if (localStorage.getItem('starEarned') === 'true') {
+          selectedTasks.status[4] = 1;
+          setSelectedTasks(selectedTasks);
+          await WriteDB(selectedTasks);
+        } else if (localStorage.getItem('starEarned') === 'false') {
+          selectedTasks.status[4] = 0;
+          setSelectedTasks(selectedTasks);
+          await WriteDB(selectedTasks);
+        }
       } else {
         const task = selectedTasks.task[index];
-        setSelectedTask(task); // 選択されたタスクの情報を設定
+        setSelectedTask(task);
         setSelectedIndex(index);
       }
     } else {
@@ -66,15 +60,15 @@ const Bingo = () => {
     }
   };
 
-  // 「戻る」ボタンのクリックハンドラ
+  // returnボタンのクリックハンドラ
   const handleBackClick = () => {
-    setSelectedTask(null); // 選択されたタスクの状態をリセット
+    setSelectedTask(null);
   };
 
-  // 「clear」ボタンのクリックハンドラ
+  // clearボタンのクリックハンドラ
   const handleClearClick = async () => {
     const index = selectedIndex;
-    setSelectedTask(null); // 選択されたタスクの状態をリセット
+    setSelectedTask(null);
     setSelectedIndex(null);
     let tasks = selectedTasks;
     tasks.status[index] = 1;
@@ -82,15 +76,26 @@ const Bingo = () => {
     setSelectedTasks(tasks);
   };
 
-  // 画像配列のマップ
-  const bingoImages = [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9];
+  // const [bingo5, setStar] = useState(Bingo5);
+  // useEffect(() => {
+  //   if (localStorage.getItem('starEarned') === 'true') {
+  //     selectedTasks.status[4] = 1;
+  //     setStar(Bingo5); 
+  //   } else {
+  //     selectedTasks.status[4] = 0;
+  //     setStar(Bingo5);
+  //   }
+  // }, [selectedTasks]);
+
+  const bingoImages = selectedTasks ? selectedTasks.status.map((status, index) => {
+    return [Bingo1, Bingo2, Bingo3, Bingo4, Bingo5, Bingo6, Bingo7, Bingo8, Bingo9][index];
+  }) : [];
 
   // ビンゴ判定
   const [bingo, setBingo] = useState(false);
   useEffect(() => {
     if (checkBingo(selectedTasks)) {
       setBingo(true);
-      console.log("BINGO!");
     } else {
       setBingo(false);
     }
@@ -120,15 +125,9 @@ const Bingo = () => {
             {
               bingoImages.map((Image, index) => (
                 (selectedTasks && selectedTasks.status[index] === 1) ?
-                  (index === 4 ?
-                    <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
-                      <img src={Star} alt={`Bingo ${index + 1}`} />
-                    </div>
-                    :
-                    <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
-                      <img src={Clear} alt={`Bingo ${index + 1}`} />
-                    </div>
-                  )
+                  <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
+                    <img src={index === 4 ? Star : Clear} alt={`Bingo ${index + 1}`} />
+                  </div>
                   :
                   <div key={index} className="bingo-cell" id={`bingo${index + 1}`} onClick={() => handleMissionSelect(index)}>
                     <img src={Image} alt={`Bingo ${index + 1}`} />
@@ -138,7 +137,7 @@ const Bingo = () => {
             {bingo && <img src={Complete} alt="Complete" className="complete" />}
           </div>
           <button className='shuffle-button' onClick={initializeTasks}>shuffle</button>
-          
+
         </div>
       }
     </div>
