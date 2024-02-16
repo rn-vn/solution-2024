@@ -1,13 +1,19 @@
-.howtoplay-title{
-    text-align: center;
-    
+.howtoplay-wrap {
+  padding-bottom: 20vh;
 }
 
-.howtoplay-p{
-    font-size: 20px;
+.howtoplay-title {
+  text-align: center;
+  padding-top: 20px;
 }
 
-.textred{
-    color: red;
-  }
+.howtoplay-p {
+  font-size: 16px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  line-height: 1.5;
+}
 
+.textred {
+  color: red;
+}
