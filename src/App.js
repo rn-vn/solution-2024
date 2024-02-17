@@ -13,7 +13,7 @@ import Goals from './components/Goals';
 
 // firebase.jsをインポート
 //import { auth, provider } from "./firebase";
- //import {signInWithPopup} from "firebase/auth";
+//import {signInWithPopup} from "firebase/auth";
 
 function App() {
 
@@ -21,15 +21,15 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path={`/register/`} element={<Register />} />
-          <Route path={`/`} element={<Login />} />
-          <Route path={`/home-bingo`} element={<HomeBingo />} />
-          <Route path={`/my-page`} element={<Mypage />} />
-          <Route path={`/learning/`} element={<Learning />} />
-          <Route path={`/how-to-play/`} element={<Howtoplay />} />
-          
+          <Route path={`${process.env.PUBLIC_URL}/register/`} element={<Register />} />
+          <Route path={`${process.env.PUBLIC_URL}/`} element={<Login />} />
+          <Route path={`${process.env.PUBLIC_URL}/home-bingo`} element={<HomeBingo />} />
+          <Route path={`${process.env.PUBLIC_URL}/my-page`} element={<Mypage />} />
+          <Route path={`${process.env.PUBLIC_URL}/learning/`} element={<Learning />} />
+          <Route path={`${process.env.PUBLIC_URL}/how-to-play/`} element={<Howtoplay />} />
+
           <Route path={`/goals/`} element={<Goals />} />
-          
+
         </Routes>
       </BrowserRouter>
     </div>
