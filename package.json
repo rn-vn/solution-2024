@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "cross-env PUBLIC_URL=/solution-2024 react-scripts build",
+    "postbuild": "copy build\\index.html build\\404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"

@@ -30,7 +30,7 @@ const HomeBingo = () => {
       {!loading && (
         <>
           {!user ? (
-            <Navigate to={`/`} />
+            <Navigate to={`${process.env.PUBLIC_URL}/`} />
           ) : (
             <>
               <div className='home-main'>

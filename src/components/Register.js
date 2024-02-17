@@ -56,7 +56,7 @@ const Register = () => {
   return (
     <>
       {user ? (
-        <Navigate to={`/`} />
+        <Navigate to={`${process.env.PUBLIC_URL}/`} />
       ) : (
         <>
           <h1 className="account-title">Register</h1>

@@ -111,7 +111,7 @@ const Learning = () => {
     else {
       alert('You have scored a star in the middle of your bingo!');
       localStorage.setItem('starEarned', 'true');
-      navigate('/home-bingo', { state: "star" });
+      navigate(`${process.env.PUBLIC_URL}/home-bingo/`, { state: "star" });
     }
   }
 
@@ -121,7 +121,7 @@ const Learning = () => {
       {!loading && (
         <>
           {!user ? (
-            <Navigate to={`/`} />
+            <Navigate to={`${process.env.PUBLIC_URL}/`} />
           ) : (
             <>
               <div className='learning-main'>

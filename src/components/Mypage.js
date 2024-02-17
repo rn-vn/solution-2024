@@ -34,7 +34,7 @@ const Mypage = () => {
   /* ↓関数「logout」を定義 */
   const logout = async () => {
     await signOut(auth);
-    navigate("/");
+    navigate(`${process.env.PUBLIC_URL}/`);
   }
 
   return (
@@ -43,7 +43,7 @@ const Mypage = () => {
       {!loading && (
         <>
           {!user ? (
-            <Navigate to={`/`} />
+            <Navigate to={`${process.env.PUBLIC_URL}/`} />
           ) : (
             <>
               <div className="mypage-container">

@@ -73,7 +73,7 @@ const Bingo = () => {
   const handleMissionSelect = async (index) => {
     if (selectedTasks) {
       if (index === 4) {
-        navigate("/Learning");
+        navigate(`${process.env.PUBLIC_URL}/learning/`);
       } else {
         const task = selectedTasks.task[index];
         setSelectedTask(task); // 選択されたタスクの情報を設定

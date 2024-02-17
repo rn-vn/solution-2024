@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <>
       {user ? (
-        <Navigate to={`/home-bingo/`} />
+        <Navigate to={`${process.env.PUBLIC_URL}/home-bingo/`} />
       ) : (
         <>
           <h1 className="account-title">Login</h1>
@@ -93,7 +93,7 @@ const Login = () => {
                 )}
               </div>
               <button className="create-button">Login</button>
-              <p><Link className="go-register" to={`/register/`}>Click here to register</Link></p>
+                <p><Link className="go-register" to={`${process.env.PUBLIC_URL}/register/`}>Click here to register</Link></p>
             </form>
           </div>
         </>
