@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./Bingo.css";
 import { CreateDB, GetDB, WriteDB } from './CreateDB'; // 必要に応じてインポートパスを調整
 import  checkBingo  from './CheckBingo'; 
@@ -18,43 +18,61 @@ import Clear from "./images/bingoclear.svg";
 import Complete from "./images/complete.svg";
 
 const Bingo = () => {
-  const [bingo5, setStar] = useState(false);
+  //const [bingo5, setStar] = useState(false);
   // 初期状態にBingo5を設定
 
-  useEffect(() => {
+  /*useEffect(() => {
     // starEarnedがtrueだった場合、localStorageに星を表示する
     if (localStorage.getItem('starEarned') === 'true') {
       setStar(Star);
     }
-  }, []);
+  }, []);*/
 
   const [selectedTasks, setSelectedTasks] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null); // 選択されたタスクを管理するための状態
   const navigate = useNavigate();
+  const location = useLocation();
 
+  console.log("load");
+
+  const refresh = async () => {
+    const tasks = await GetDB();
+    console.log("Check star");
+    console.dir(location);
+    console.dir(tasks);
+    if (location.state === "star" && tasks){
+      tasks.status[4] = 1;
+      setSelectedTasks(tasks);
+      await WriteDB(tasks);
+      location.state = null;
+    } else {
+      setSelectedTasks(tasks);
+      console.log("Not star")
+    }
+    if (checkBingo(tasks)) {
+      setBingo(true);
+      console.log("BINGO!");
+    } else {
+      setBingo(false);
+    }
+  }
 
   useEffect(() => {
-    async function fetchTasks() {
-      const tasks = await GetDB();
-      setSelectedTasks(tasks);
-    }
-    fetchTasks();
+    (async () => {
+      await refresh();
+    })()
   }, []);
 
   const initializeTasks = async () => {
     const tasks = await CreateDB();
     setSelectedTasks(tasks);
+    await refresh();
   }
 
   const handleMissionSelect = async (index) => {
     if (selectedTasks) {
       if (index === 4) {
-        let tasks = selectedTasks;
-        tasks.status[index] = 1;
-        setSelectedTasks(tasks);
-        console.log(tasks.status);
-        await WriteDB(tasks);
         navigate("/Learning");
       } else {
         const task = selectedTasks.task[index];
@@ -80,6 +98,8 @@ const Bingo = () => {
     tasks.status[index] = 1;
     await WriteDB(tasks);
     setSelectedTasks(tasks);
+    await refresh();
+
   };
 
   // 画像配列のマップ
@@ -87,14 +107,6 @@ const Bingo = () => {
 
   // ビンゴ判定
   const [bingo, setBingo] = useState(false);
-  useEffect(() => {
-    if (checkBingo(selectedTasks)) {
-      setBingo(true);
-      console.log("BINGO!");
-    } else {
-      setBingo(false);
-    }
-  }, [selectedTasks]);
 
   return (
     <div className="bingo-main">
