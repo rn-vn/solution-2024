@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/solution-2024/static/css/main.d4a1e6f1.css",
-    "main.js": "/solution-2024/static/js/main.ee74ac9b.js",
+    "main.js": "/solution-2024/static/js/main.9c0fa66c.js",
     "static/media/complete.svg": "/solution-2024/static/media/complete.fce234d99a2e9e0765a2f944493fecb0.svg",
     "static/media/TsukimiRounded-SemiBold.ttf": "/solution-2024/static/media/TsukimiRounded-SemiBold.de5a8370a4469243cc84.ttf",
     "static/media/TsukimiRounded-Regular.ttf": "/solution-2024/static/media/TsukimiRounded-Regular.dc7607101c944dce846b.ttf",
@@ -25,10 +25,10 @@
     "static/media/Star1.svg": "/solution-2024/static/media/Star1.eeb2cbf98845a4a638a04fd6f61bf099.svg",
     "index.html": "/solution-2024/index.html",
     "main.d4a1e6f1.css.map": "/solution-2024/static/css/main.d4a1e6f1.css.map",
-    "main.ee74ac9b.js.map": "/solution-2024/static/js/main.ee74ac9b.js.map"
+    "main.9c0fa66c.js.map": "/solution-2024/static/js/main.9c0fa66c.js.map"
   },
   "entrypoints": [
     "static/css/main.d4a1e6f1.css",
-    "static/js/main.ee74ac9b.js"
+    "static/js/main.9c0fa66c.js"
   ]
 }
