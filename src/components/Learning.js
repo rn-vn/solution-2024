@@ -42,9 +42,6 @@ const Learning = () => {
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * Urls.length);
       setCurrentUrl(Urls[randomIndex]);
-
-      // 日付が変わったら星を削除
-      localStorage.removeItem('starEarned');
     }, 1000 * 60 * 60 * 24);
 
     setTimeout(() => {
@@ -67,12 +64,12 @@ const Learning = () => {
     const text = document.getElementById('input').value;
     const count = document.getElementById('count');
 
-    const spaceCharactor = text.match(/\S/g);
+    const spaceCharactor = text.match(/\S+/g);
     if (spaceCharactor !== null) {
       count.innerHTML = `${spaceCharactor.length}`;
       count.style.fontSize = '24px';
-      // 100文字以下のスタイル適用
-      if (text.length >= 100) {
+      // 30単語以下のスタイル適用
+      if (spaceCharactor.length >= 30) {
         count.style.color = '#735240';
         count.style.fontSize = '30px';
       } else {
@@ -108,8 +105,8 @@ const Learning = () => {
   const AddStar = () => {
     const count = document.getElementById('count').innerHTML;
 
-    if (parseInt(count) < 100) {
-      alert('Please enter more than 100 characters!');
+    if (parseInt(count) < 30) {
+      alert('Please enter 30 words or more!');
     }
     else {
       alert('You have scored a star in the middle of your bingo!');
@@ -139,7 +136,7 @@ const Learning = () => {
                   <textarea id="input" onChange={() => textCountStyle()} />
                   <div>
                     <span id="count">0</span>
-                    <span className='count-number'><b>/100</b></span>
+                    <span className='count-number'><b>/30</b></span>
                   </div>
                   <input type='submit' id='submit' className='submit' onClick={AddStar} value='Click and Submit' />
                 </div>
