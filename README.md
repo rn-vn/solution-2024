@@ -11,7 +11,7 @@
 
 
 
-## SDGs 17: Partnerships
+## SDGs 4: Quality Education
 
 
 ## Environments
@@ -47,10 +47,6 @@ npm start
 
 Then, runs the app in the development mode. <br>
 Open http://localhost:3000 to view it in your browser.
-
-
-## Database
-
 
 
 ## Directory Structure
