@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   height: 70vh;
   justify-content: center;
+  margin-bottom: 40vh;
 }
 
 .current-date {
@@ -11,8 +12,8 @@
   margin-bottom: 20px;
 }
 
-/* .home-wrap {
+.home-wrap {
   width: 90vw;
   height: 400px;
   padding: 20px;
-} */
+}
