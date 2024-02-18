@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/solution-2024/static/css/main.f333a757.css",
+    "main.css": "/solution-2024/static/css/main.55a24f8d.css",
     "main.js": "/solution-2024/static/js/main.42f8783b.js",
     "static/media/complete.svg": "/solution-2024/static/media/complete.fce234d99a2e9e0765a2f944493fecb0.svg",
     "static/media/TsukimiRounded-SemiBold.ttf": "/solution-2024/static/media/TsukimiRounded-SemiBold.de5a8370a4469243cc84.ttf",
@@ -24,11 +24,11 @@
     "static/media/bingo1.svg": "/solution-2024/static/media/bingo1.47df4468b1d5323c800b25820561782d.svg",
     "static/media/Star1.svg": "/solution-2024/static/media/Star1.eeb2cbf98845a4a638a04fd6f61bf099.svg",
     "index.html": "/solution-2024/index.html",
-    "main.f333a757.css.map": "/solution-2024/static/css/main.f333a757.css.map",
+    "main.55a24f8d.css.map": "/solution-2024/static/css/main.55a24f8d.css.map",
     "main.42f8783b.js.map": "/solution-2024/static/js/main.42f8783b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f333a757.css",
+    "static/css/main.55a24f8d.css",
     "static/js/main.42f8783b.js"
   ]
 }
