@@ -34,7 +34,9 @@ const HomeBingo = () => {
           ) : (
             <>
               <div className='home-main'>
-                <CurrentDate />
+                <div className='current-date'>
+                  <CurrentDate />
+                </div>
                 <div className="home-wrap">
                   <Bingo />
                 </div>

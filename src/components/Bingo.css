@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  /* height: 70vh; */
 }
 
 .mission-display {
   text-align: center;
   width: 80vw;
-  height: 60vh;
+  height: 450px;
   border: 3px solid #735240;
   background: #FAF1E4;
 }
@@ -33,7 +33,7 @@
   font-size: 24px;
 }
 
-.mission-clear-button:hover {
+.mission-clear-button:active {
   background-color: #735240;
   color: #FAF3E0;
   cursor: pointer;
@@ -63,11 +63,10 @@
   margin-top: 15px;
 }
 
-.mission-return-button:hover,
-.shuffle-button:hover {
+.mission-return-button:active,
+.shuffle-button:active {
   background-color: #735240;
   color: #FAF3E0;
-  cursor: pointer;
 }
 
 .bingo-container {
