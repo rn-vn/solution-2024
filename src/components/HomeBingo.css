@@ -1,8 +1,18 @@
 .home-main {
-  height: 100vh;
-  background: #DDF0C6;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  justify-content: center;
 }
 
-.home-wrap {
-  height: 56vh;
+.current-date {
+  width: 100vh;
+  margin-bottom: 20px;
 }
+
+/* .home-wrap {
+  width: 90vw;
+  height: 400px;
+  padding: 20px;
+} */

@@ -30,8 +30,8 @@
   cursor: pointer;
 }
 
-.button:hover,
-.submit:hover {
+.button:active,
+.submit:active {
   background-color: #735240;
   color: #FAF3E0;
   cursor: pointer;

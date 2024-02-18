@@ -8,11 +8,12 @@
 
 .current-date {
   width: 100vh;
+  margin-bottom: 20px;
 }
 
 .account-information-container {
   width: 90vw;
-  height: 50vh;
+  height: 300px;
   padding: 20px;
   background-color: #FAF3E0;
   border: 3px #735240 solid;
@@ -27,7 +28,7 @@
   margin-bottom: 5vh;
 }
 
-.mypage-bottom {
+.logout-bottom {
   border-radius: 25px;
   border: 2px #735240 solid;
   justify-content: center;
@@ -38,7 +39,7 @@
   font-size: 16px;
 }
 
-.mypage-bottom:hover {
+.logout-bottom:active {
   background-color: #735240;
   color: #FAF3E0;
   cursor: pointer;
