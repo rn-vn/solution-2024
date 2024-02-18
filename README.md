@@ -8,11 +8,13 @@
 
 
 ## [App Name] - SDGs Bingo Game
-
+This application is designed to help you better understand the SDG goals. Specifically, through bingo games, users can deepen their understanding and take concrete actions toward a sustainable society.
 
 
 ## SDGs 4: Quality Education
+**In particular, we want to approach Target 4.7** - By 2030, ensure that all learners have the knowledge and skills necessary to promote sustainable development.
 
+Our app can be used by young and old alike to solve SDG 4 Quality Education for All. By playing bingo, people can think and learn about contributions to the SDGs that they can make in their daily lives.
 
 ## Environments
 - Language: HTML, CSS, JS
@@ -30,14 +32,14 @@ node --version
 npm --version
 ```
 
-3. Environment construction
-```
-npm install
-```
-
-4. Clone this repository
+3. Clone this repository
 ```
 git clone https://github.com/rn-vn/solution-2024.git
+```
+
+4. Environment construction
+```
+npm install
 ```
 
 5. Start the server
