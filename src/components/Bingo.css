@@ -40,7 +40,7 @@
 }
 
 .mission-return-button,
-.shuffle-button {
+.reset-button {
   border-radius: 25px;
   border: 2px #735240 solid;
   justify-content: center;
@@ -59,12 +59,12 @@
   margin-top: 5vh;
 }
 
-.shuffle-button {
+.reset-button {
   margin-top: 15px;
 }
 
 .mission-return-button:active,
-.shuffle-button:active {
+.reset-button:active {
   background-color: #735240;
   color: #FAF3E0;
 }
