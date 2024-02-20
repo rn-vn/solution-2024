@@ -1,4 +1,5 @@
 # Solution Challenge 2024 - Chuo University
+**StuDyGoals Bingo**
 
 ## Members
 - Lio Kobayashi
@@ -7,8 +8,10 @@
 - Riko Homma
 
 
-## [App Name] - SDGs Bingo Game
-This application is designed to help you better understand the SDG goals. Specifically, through bingo games, users can deepen their understanding and take concrete actions toward a sustainable society.
+## StuDyGoals Bingo
+This application is designed to help you better understand the SDG goals.
+
+Specifically, through bingo games, users can deepen their understanding and take concrete actions toward a sustainable society.
 
 
 ## SDGs 4: Quality Education
@@ -79,7 +82,7 @@ Open http://localhost:3000 to view it in your browser.
 ├── src
 │   ├── components
 │   │   ├── fonts
-│   │   │   ├── TsukimiRounded-Bold.ttf
+│   │   │   ├── TsukimiRounded-Medium.ttf
 │   │   │   ├── TsukimiRounded-Regular.ttf
 │   │   │   └── TsukimiRounded-SemiBold.ttf
 │   │   ├── images
