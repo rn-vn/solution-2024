@@ -13,7 +13,6 @@ const Howtoplay = () => {
           Tap the numbers displayed on the screen to complete the given mission!
           The missions are to take actions related to the SDGs goals and to acquire knowledge about the SDGs.
           When you get three "Clear" cards vertically, horizontally, or diagonally, you have a Bingo!
-          <p className='textred'> Bingo cards will be updated in a week.</p>
         </p>
         <h1 className='howtoplay-title'>How to play</h1>
         <p className='howtoplay-p'>
@@ -22,6 +21,7 @@ const Howtoplay = () => {
           3.Tap the number displayed on the screen.<br />
           4.Clear the mission.<br />
           5.Clear a number on the bingo card.<br />
+          6.Click the reset button if you want to start from the beginning again.<br />
         </p>
         <h1 className='howtoplay-title'>Mission</h1>
         <p className='howtoplay-p'>To take actions related to the SDGs goals and to acquire knowledge about the SDGs.</p>
