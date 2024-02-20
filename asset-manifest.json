@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/solution-2024/static/css/main.55a24f8d.css",
-    "main.js": "/solution-2024/static/js/main.8120b6c7.js",
-    "static/media/complete.svg": "/solution-2024/static/media/complete.fce234d99a2e9e0765a2f944493fecb0.svg",
+    "main.css": "/solution-2024/static/css/main.e8839475.css",
+    "main.js": "/solution-2024/static/js/main.cdb1f4c3.js",
+    "static/media/complete.svg": "/solution-2024/static/media/complete.e9c09fb052d0d3972b7d6ddbf00e9b73.svg",
     "static/media/TsukimiRounded-SemiBold.ttf": "/solution-2024/static/media/TsukimiRounded-SemiBold.de5a8370a4469243cc84.ttf",
     "static/media/TsukimiRounded-Regular.ttf": "/solution-2024/static/media/TsukimiRounded-Regular.dc7607101c944dce846b.ttf",
     "static/media/TsukimiRounded-Medium.ttf": "/solution-2024/static/media/TsukimiRounded-Medium.4f3df543eb4c9f51b561.ttf",
@@ -11,7 +11,7 @@
     "static/media/HowtoPlay-icon.svg": "/solution-2024/static/media/HowtoPlay-icon.3813c0e17dfbb1bfd7c74a903b1e1984.svg",
     "static/media/BacktoHome-icon.svg": "/solution-2024/static/media/BacktoHome-icon.0ad2daff2532a76433fdcae05af1c9eb.svg",
     "static/media/learning-logo.png": "/solution-2024/static/media/learning-logo.62fae604dab8753a0dbe.png",
-    "static/media/bingotitle.svg": "/solution-2024/static/media/bingotitle.7f657fc53ce62335a930be179638d9ea.svg",
+    "static/media/bingotitle.svg": "/solution-2024/static/media/bingotitle.f57e1a692d36597648a0d2b0e1f3f84a.svg",
     "static/media/bingoclear.svg": "/solution-2024/static/media/bingoclear.b8b39b4537e012fecbc45e3cea3ebdad.svg",
     "static/media/bingo3.svg": "/solution-2024/static/media/bingo3.cfadb9f3e3d1068bb07deda94ac3acff.svg",
     "static/media/bingo2.svg": "/solution-2024/static/media/bingo2.7cfc728c270e68c711d6131349ec5726.svg",
@@ -22,13 +22,13 @@
     "static/media/bingo4.svg": "/solution-2024/static/media/bingo4.19511f3c4caae84b67bbe14792ea3148.svg",
     "static/media/bingo7.svg": "/solution-2024/static/media/bingo7.7a0236d331e4dda4f2ed3dd1b5ea83d8.svg",
     "static/media/bingo1.svg": "/solution-2024/static/media/bingo1.47df4468b1d5323c800b25820561782d.svg",
-    "static/media/Star1.svg": "/solution-2024/static/media/Star1.eeb2cbf98845a4a638a04fd6f61bf099.svg",
+    "static/media/Star1.svg": "/solution-2024/static/media/Star1.4dc3d146a04c6c01785636f8029a93f5.svg",
     "index.html": "/solution-2024/index.html",
-    "main.55a24f8d.css.map": "/solution-2024/static/css/main.55a24f8d.css.map",
-    "main.8120b6c7.js.map": "/solution-2024/static/js/main.8120b6c7.js.map"
+    "main.e8839475.css.map": "/solution-2024/static/css/main.e8839475.css.map",
+    "main.cdb1f4c3.js.map": "/solution-2024/static/js/main.cdb1f4c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.55a24f8d.css",
-    "static/js/main.8120b6c7.js"
+    "static/css/main.e8839475.css",
+    "static/js/main.cdb1f4c3.js"
   ]
 }
