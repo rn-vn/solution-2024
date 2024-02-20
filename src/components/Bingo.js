@@ -149,8 +149,8 @@ const Bingo = () => {
             }
             {bingo && <img src={Complete} alt="Complete" className="complete" />}
           </div>
-          <button className='shuffle-button' onClick={initializeTasks}>shuffle</button>
-          
+          <button className='reset-button' onClick={initializeTasks}>Reset</button>
+
         </div>
       }
     </div>

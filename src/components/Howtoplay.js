@@ -40,11 +40,6 @@ const Howtoplay = () => {
           <p className='textred'>When three Clear cards are aligned vertically, horizontally, or diagonally, you have a Bingo!
           </p>
         </p>
-        <h1 className='howtoplay-title'>Bingo Card Update</h1>
-        <p className='howtoplay-p'>
-          Bingo cards are updated every week.
-          New bingo cards will have new missions.
-        </p>
         <h1 className='howtoplay-title'>Learn about the SDGs</h1>
         <p className='howtoplay-p'>
           Read articles related to the SDGs
